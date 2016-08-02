@@ -107,9 +107,11 @@
         android:gravity="center">
         <Button
             android:id="@+id/joinsubmit"
+            android:onClick="SubmitJoin"
             android:text="가입"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/cancle"
             android:onClick="Cancle"
