@@ -37,10 +37,9 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
-.idea/libraries
-.idea/encodings.xml
-.idea/misc.xml
+.idea/copyright/
+.idea/libraries/
+
 settings.gradle
 
 # Keystore files
@@ -48,3 +47,4 @@ settings.gradle
 
 ### Android Patch ###
 gen-external-apklibs
+
