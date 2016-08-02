@@ -3,6 +3,7 @@ package com.project.finalandproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,8 @@ public class Mem_Join_Page extends Activity {
             edtTxt[i] = (EditText) findViewById(texts[i]);
         }
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
     }
 
@@ -51,22 +54,18 @@ public class Mem_Join_Page extends Activity {
             member_name =edtTxt[0].getText().toString();
             member_id = edtTxt[1].getText().toString();
             member_pwd = edtTxt[2].getText().toString();
-            member_name = edtTxt[3].getText().toString();
-            member_email = edtTxt[4].getText().toString();
-            category = "mvcIns";
+            member_email = edtTxt[3].getText().toString();
 
 
-        String requestURL = "http://192.168.14.20:8805/gogoJDBC/andController.do";
+        String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
 
         HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestURL);
         List<NameValuePair> paramList = new ArrayList<>();
-        paramList.add(new BasicNameValuePair("member_name", member_name));
-        paramList.add(new BasicNameValuePair("member_id", member_id));
-        paramList.add(new BasicNameValuePair("member_pwd", member_pwd));
-        paramList.add(new BasicNameValuePair("member_name", member_name));
-        paramList.add(new BasicNameValuePair("member_email", member_email));
-        paramList.add(new BasicNameValuePair("category", category));
+        paramList.add(new BasicNameValuePair("name", member_name));
+        paramList.add(new BasicNameValuePair("id", member_id));
+        paramList.add(new BasicNameValuePair("pwd", member_pwd));
+        paramList.add(new BasicNameValuePair("email", member_email));
 
 
         try {
