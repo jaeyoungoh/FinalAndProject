@@ -19,9 +19,9 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Administrator on 2016-08-02.
- */
+
+
+
 public class Mem_Join_Page extends Activity {
 
     String member_name, member_id, member_pwd, member_email, category;

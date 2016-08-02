@@ -6,10 +6,9 @@ import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Administrator on 2016-07-27.
- */
-public class usercococo extends Activity {
+
+
+public class TestCalender extends Activity {
 
     CalendarView calendar;
     TextView text11;
