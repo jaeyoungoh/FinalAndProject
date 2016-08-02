@@ -32,6 +32,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/join_name_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4" />
@@ -51,6 +52,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/join_id_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4" />
@@ -70,6 +72,7 @@
             android:textSize="17.7dp" />
 
         <EditText
+            android:id="@+id/join_pass_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4" />
@@ -89,6 +92,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/join_email_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4" />
@@ -108,6 +112,7 @@
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/cancle"
+            android:onClick="Cancle"
             android:text="취소"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
