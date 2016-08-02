@@ -34,7 +34,7 @@ public class Mem_Join_Page extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.memjoin_page);
+        setContentView(R.layout.mem_join_page);
         goback = (Button) findViewById(R.id.goback);
         cancle = (Button) findViewById(R.id.cancle);
         joinsubmit = (Button) findViewById(R.id.joinsubmit);
