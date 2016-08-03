@@ -12,15 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Mem_Modify_Page"></activity>
-        <activity android:name=".Mem_Join_Page"></activity>
+        <activity android:name=".ListviewActivity">
 
-        <activity android:name=".Main_Page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+        <activity android:name=".TestTopView"></activity>
+        <activity android:name=".TestJava">
+
+
+        </activity>
+
+
+
+        <activity android:name=".Mem_Modify_Page"></activity>
+        <activity android:name=".Mem_Join_Page"></activity>
+
+        <activity android:name=".Main_Page">
 
         </activity>
 
