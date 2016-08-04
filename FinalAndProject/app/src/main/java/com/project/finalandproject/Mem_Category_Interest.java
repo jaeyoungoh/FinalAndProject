@@ -14,7 +14,7 @@ import android.widget.Toast;
  * Created by Administrator on 2016-07-14.
  */
 public class Mem_Category_Interest extends Activity {
-    int ckall=0;
+    int ckall = 0;
     String member_interest;
     Intent intent;
     Button chk, back;
@@ -31,7 +31,7 @@ public class Mem_Category_Interest extends Activity {
         setContentView(R.layout.mem_category_interest);
         chk = (Button) findViewById(R.id.chk);
         back = (Button) findViewById(R.id.back);
-        allbox =(CheckBox) findViewById(R.id.checkbox_all);
+        allbox = (CheckBox) findViewById(R.id.checkbox_all);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -47,7 +47,7 @@ public class Mem_Category_Interest extends Activity {
         if (view instanceof CheckBox) {
             boolean checked = ((CheckBox) view).isChecked();
 
-            if (view.getId() ==allbox.getId() && checked) { //모두선택
+            if (view.getId() == allbox.getId() && checked) { //모두선택
                 for (int p = 0; p < 6; p++) {
                     checkbox[p].setChecked(true);
                 }
@@ -57,82 +57,84 @@ public class Mem_Category_Interest extends Activity {
                     checkbox[p].setChecked(false);
                 }
                 Toast.makeText(getApplicationContext(), "전체 선택 해제", Toast.LENGTH_SHORT).show();
+            }
 
             for (int i = 0; i < checkboxs.length; i++) {
                 if (view.getId() == checkbox[i].getId()) {
 
-                    } else if (view.getId() == checkbox[0].getId() && checked) { //아웃도어/여행
+                } else if (view.getId() == checkbox[0].getId() && checked) { //아웃도어/여행
 
-                        Toast.makeText(getApplicationContext(), checkbox[0].getText() + " 선택", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[0].getText() + " 선택", Toast.LENGTH_SHORT).show();
 
 
-                    } else if (view.getId() == checkbox[0].getId() && !checked) {
+                } else if (view.getId() == checkbox[0].getId() && !checked) {
 
-                        Toast.makeText(getApplicationContext(), checkbox[0].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[0].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[1].getId() && checked) { //운동/스포츠
+                } else if (view.getId() == checkbox[1].getId() && checked) { //운동/스포츠
 
-                        Toast.makeText(getApplicationContext(), checkbox[1].getText() + " 선택", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[1].getText() + " 선택", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[1].getId() && !checked) {
+                } else if (view.getId() == checkbox[1].getId() && !checked) {
 
-                        Toast.makeText(getApplicationContext(), checkbox[1].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[1].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[2].getId() && checked) { //인문학/책/글
+                } else if (view.getId() == checkbox[2].getId() && checked) { //인문학/책/글
 
-                        Toast.makeText(getApplicationContext(), checkbox[2].getText() + " 선택", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[2].getText() + " 선택", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[2].getId() && !checked) {
+                } else if (view.getId() == checkbox[2].getId() && !checked) {
 
-                        Toast.makeText(getApplicationContext(), checkbox[2].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[2].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[4].getId() && checked) {//외국/언어
+                } else if (view.getId() == checkbox[3].getId() && checked) {//외국/언어
 
-                        Toast.makeText(getApplicationContext(), checkbox[4].getText() + " 선택", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[3].getText() + " 선택", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[4].getId() && !checked) {
+                } else if (view.getId() == checkbox[3].getId() && !checked) {
 
-                        Toast.makeText(getApplicationContext(), checkbox[4].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[3].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[5].getId() && checked) { //봉사활동
+                } else if (view.getId() == checkbox[4].getId() && checked) { //봉사활동
 
-                        Toast.makeText(getApplicationContext(), checkbox[5].getText() + " 선택", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[4].getText() + " 선택", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[5].getId() && !checked) {
+                } else if (view.getId() == checkbox[4].getId() && !checked) {
 
-                        Toast.makeText(getApplicationContext(), checkbox[5].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[4].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[6].getId() && checked) { //자유주제
+                } else if (view.getId() == checkbox[5].getId() && checked) { //자유주제
 
-                        Toast.makeText(getApplicationContext(), checkbox[6].getText() + " 선택", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), checkbox[5].getText() + " 선택", Toast.LENGTH_SHORT).show();
 
-                    } else if (view.getId() == checkbox[6].getId() && !checked) {
+                } else if (view.getId() == checkbox[5].getId() && !checked) {
 
-                        Toast.makeText(getApplicationContext(), checkbox[6].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(getApplicationContext(), checkbox[5].getText() + " 선택 해제", Toast.LENGTH_SHORT).show();
                 }
             }
-
-
         }
 
-        if (view.getId() == chk.getId()) {
 
-            member_interest = "";
-            for (int j = 0; j < checkboxs.length; j++) {
-                if (checkbox[j].isChecked()) {
-                    member_interest += checkbox[j].getText().toString() + ",";
-                    total++;
-                }
+
+    if(view.getId()==chk.getId())
+
+    {
+
+        member_interest = "";
+        for (int j = 0; j < checkboxs.length; j++) {
+            if (checkbox[j].isChecked()) {
+                member_interest += checkbox[j].getText().toString() + ",";
+                total++;
             }
-            if (total < 2) {
-                Toast.makeText(getApplicationContext(), "최소2개부터 선택 가능합니다.", Toast.LENGTH_LONG).show();
-            } else if (total >= 6) {
-                Toast.makeText(getApplicationContext(), "최대5개까지만 선택 가능합니다.", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(getApplicationContext(), member_interest, Toast.LENGTH_LONG).show();
-                intent = new Intent(getApplication(), Mem_Join_Success_page.class);
-                startActivity(intent);
+        }
+        if (total < 2) {
+            Toast.makeText(getApplicationContext(), "최소2개부터 선택 가능합니다.", Toast.LENGTH_LONG).show();
+        } else if (total >= 6) {
+            Toast.makeText(getApplicationContext(), "최대5개까지만 선택 가능합니다.", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), member_interest, Toast.LENGTH_LONG).show();
+            intent = new Intent(getApplication(), Mem_Join_Success_page.class);
+            startActivity(intent);
 
 
                     /*    String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
@@ -149,16 +151,18 @@ public class Mem_Category_Interest extends Activity {
                 Log.d("sendPost===> ", e.toString());
             }
 */
-            }
-
         }
 
-
-        if (view.getId() == back.getId()) {
-            intent = new Intent(getApplication(), Main_Page.class);
-            startActivity(intent);
-        }
     }
+
+
+    if(view.getId()==back.getId())
+
+    {
+        intent = new Intent(getApplication(), Main_Page.class);
+        startActivity(intent);
+    }
+}
 }
 
 
