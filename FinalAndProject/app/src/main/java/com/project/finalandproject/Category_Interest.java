@@ -115,7 +115,12 @@ public class Category_Interest extends Activity {
         }
 
         if (view.getId() == chk.getId()) {
-            total = 0;
+
+            if (checkbox[0].isChecked()) {  //전체선택은 체크박스 갯수 포함 안됨.
+                total = -1;
+            } else {
+                total = 0;
+            }
             member_interest = "";
             for (int j = 0; j < checkboxs.length; j++) {
                 if (checkbox[j].isChecked()) {
@@ -123,10 +128,13 @@ public class Category_Interest extends Activity {
                     total++;
                 }
             }
-            if (total >= 3) {
-                Toast.makeText(getApplicationContext(), "최대 2개까지만 선택 가능합니다.", Toast.LENGTH_LONG).show();
+            if (total < 2) {
+                Toast.makeText(getApplicationContext(), "최소2개부터 선택 가능합니다.", Toast.LENGTH_LONG).show();
+            } else if (total >= 6) {
+                Toast.makeText(getApplicationContext(), "최대5개까지만 선택 가능합니다.", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getApplicationContext(), member_interest, Toast.LENGTH_LONG).show();
+
 
                     /*    String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
 

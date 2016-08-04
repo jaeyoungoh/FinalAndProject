@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -75,7 +76,9 @@ public class Mem_Join_Page extends Activity {
             Log.d("sendPost===> ", e.toString());
         }
 
-
+        Toast.makeText(getApplicationContext(),"가입완료",Toast.LENGTH_LONG).show();
+        intent = new Intent(getApplication(), Main_Page.class);
+        startActivity(intent);
     }
 
 
