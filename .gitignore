@@ -40,6 +40,7 @@ captures/
 .idea/
 .idea/copyright/
 .idea/libraries/
+test/
 
 settings.gradle
 
@@ -48,4 +49,6 @@ settings.gradle
 
 ### Android Patch ###
 gen-external-apklibs
+
+
 
