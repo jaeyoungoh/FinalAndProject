@@ -23,18 +23,17 @@
 
         </activity>
 
-
+        <activity android:name=".Mem_Join_Success_page"></activity>
         <activity android:name=".Mem_Modify_Page"></activity>
         <activity android:name=".Mem_Join_Page"></activity>
-        <activity android:name=".Category_Interest">
+        <activity android:name=".Mem_Category_Interest"></activity>
+
+        <activity android:name=".Main_Page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".Main_Page">
 
         </activity>
 

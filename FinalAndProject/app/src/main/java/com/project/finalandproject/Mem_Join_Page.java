@@ -77,7 +77,7 @@ public class Mem_Join_Page extends Activity {
         }
 
         Toast.makeText(getApplicationContext(),"가입완료",Toast.LENGTH_LONG).show();
-        intent = new Intent(getApplication(), Main_Page.class);
+        intent = new Intent(getApplication(), Mem_Category_Interest.class);
         startActivity(intent);
     }
 
