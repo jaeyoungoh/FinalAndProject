@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.project.finalandproject.Main_Page;
+import com.project.finalandproject.R;
+
 
 /**
  * Created by Administrator on 2016-07-14.
