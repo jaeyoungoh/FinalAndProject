@@ -1,8 +1,10 @@
 package com.project.finalandproject.test;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,9 +15,12 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.project.finalandproject.R;
+
+import java.util.ArrayList;
 
 public class Test_Menu_Activity extends Activity implements OnClickListener {
 
@@ -32,8 +37,42 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_menu_main);
+		FrameLayout inter = (FrameLayout)findViewById(R.id.inter);
+
+
+		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		inflater.inflate(R.layout.testholdtitle, inter,true);
 
 		initSildeMenu();
+		LinearLayout container = (LinearLayout) findViewById(R.id.containerInflater);
+
+		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		inflater.inflate(R.layout.test_top, container,true);
+
+		ListView listView=(ListView)findViewById(R.id.listview);
+		ArrayList<Listviewitem> data=new ArrayList<>();
+		Listviewitem test1 =new Listviewitem(R.drawable.samplewide1,"test1");
+		Listviewitem test2 =new Listviewitem(R.drawable.samplewide2,"test2");
+		Listviewitem test3 =new Listviewitem(R.drawable.samplewide3,"test3");
+		Listviewitem test4 =new Listviewitem(R.drawable.samplebg,"test4");
+		data.add(test1);
+		data.add(test2);
+		data.add(test3);
+		data.add(test4);
+		data.add(test1);
+		data.add(test2);
+		data.add(test3);
+		data.add(test4);
+		data.add(test1);
+		data.add(test2);
+		data.add(test3);
+		data.add(test4);
+		data.add(test1);
+		data.add(test2);
+		data.add(test3);
+		data.add(test4);
+		ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
+		listView.setAdapter(adapter);
 
 	}
 

@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:background="#ffffff"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/ll_menuLayout"
@@ -17,15 +17,15 @@
             android:background="#ff393c46"
             android:gravity="left"
             android:orientation="vertical"
-            android:textColor="#ff000000" >
+            android:textColor="#ff000000">
 
             <!-- include -->
 
             <include
                 android:id="@+id/ic_leftslidemenu"
+                layout="@layout/leftslidemenu"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                layout="@layout/leftslidemenu" />
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <!-- slide layout -->
@@ -36,13 +36,12 @@
             android:layout_height="match_parent"
             android:background="#ffffffff"
             android:gravity="left"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <FrameLayout
+                android:id="@+id/inter"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
+                android:layout_height="match_parent">
                 <Button
                     android:id="@+id/bt_left"
                     android:layout_width="wrap_content"
@@ -50,21 +49,39 @@
                     android:layout_margin="10dp"
                     android:text="마이페이지" />
 
+
+            <!--    <LinearLayout
+                    android:id="@+id/containerInflater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:divider="#ffcc22"
+                    android:dividerHeight="1.5dp">
+
+                </ListView>-->
+
                 <LinearLayout
                     android:id="@+id/ll_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                     >
-                </LinearLayout>
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_empty"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:background="@android:color/transparent"
-                    android:orientation="vertical"
-                    />
+                    android:orientation="vertical" />
             </FrameLayout>
         </LinearLayout>
     </FrameLayout>
