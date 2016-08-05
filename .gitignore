@@ -64,3 +64,8 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+
+#idea �κ� �߰�
+.idea/
+FinalAndProject/app/src/androidTest/java/com/project/finalandproject/finalandproject/ApplicationTest.java
+FinalAndProject/app/src/test/java/com/project/finalandproject/finalandproject/ExampleUnitTest.java
