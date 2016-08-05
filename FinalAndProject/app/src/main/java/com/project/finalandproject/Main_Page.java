@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.project.finalandproject.dto.MemberDTO;
+import com.project.finalandproject.member.Info;
+import com.project.finalandproject.member.Mem_Join_Page;
 
 /**
  * Created by Administrator on 2016-08-02.
