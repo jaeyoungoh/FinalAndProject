@@ -70,7 +70,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		data.add(test1);
 		data.add(test2);
 		data.add(test3);
-		data.add(test4);
+
 		ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
 		listView.setAdapter(adapter);
 

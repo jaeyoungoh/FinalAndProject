@@ -27,13 +27,7 @@
         <activity android:name=".member.Mem_Join_Success_page" />
         <activity android:name=".member.Mem_Modify_Page" />
         <activity android:name=".member.Mem_Join_Page" />
-<<<<<<< Updated upstream
         <activity android:name=".member.Mem_Category_Interest" />
-=======
-        <activity android:name=".Mem_Category_Interest" />
-
-
->>>>>>> Stashed changes
         <activity android:name=".Main_Page">
         </activity>
         <activity android:name=".test.TestCalender"></activity>

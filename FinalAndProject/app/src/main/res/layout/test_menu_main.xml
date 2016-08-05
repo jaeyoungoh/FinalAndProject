@@ -44,10 +44,10 @@
                 android:layout_height="match_parent">
                 <Button
                     android:id="@+id/bt_left"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:text="마이페이지" />
+                    android:background="@drawable/ic_man" />
 
 
             <!--    <LinearLayout
