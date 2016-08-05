@@ -78,38 +78,68 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:orientation="horizontal"
-        android:gravity="center|top">
+        android:orientation="vertical"
+        >
 
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/login"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="Login"
-            android:text="Login"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_weight="1"
+            android:gravity="center|top"
+            >
 
-        <Button
-            android:id="@+id/joinbt"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="Joinbt"
-            android:text="Join"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/findinfo"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="Login"
-            android:text="Forgot?"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="Login"
+                android:text="Login"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/joinbt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="Joinbt"
+                android:text="Join"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/findinfo"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="Login"
+                android:text="Forgot?"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1">
+           <Button
+               android:id="@+id/naverbt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="naver"/>
+
+           <Button
+               android:id="@+id/daumbt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="goto daum"/>
+
+
+       </LinearLayout>
 
     </LinearLayout>
 

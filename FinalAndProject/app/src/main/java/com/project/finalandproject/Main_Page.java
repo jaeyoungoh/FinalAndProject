@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.Info;
 import com.project.finalandproject.member.Mem_Join_Page;
+import com.project.finalandproject.naver.OAuthSampleActivity;
 
 /**
  * Created by Administrator on 2016-08-02.
@@ -19,7 +20,7 @@ import com.project.finalandproject.member.Mem_Join_Page;
 public class Main_Page extends Activity {
 
     Intent intent;
-    Button Joinbt;
+    Button Joinbt, naverbt, daumbt;
 
     EditText member_id;
     EditText member_pwd;
@@ -32,6 +33,30 @@ public class Main_Page extends Activity {
         Joinbt = (Button)findViewById(R.id.joinbt);
         member_id = (EditText)findViewById(R.id.num1);
         member_pwd = (EditText)findViewById(R.id.num2);
+        naverbt = (Button) findViewById(R.id.naverbt);
+        daumbt = (Button) findViewById(R.id.daumbt);
+
+
+
+        daumbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplication(), OAuthSampleActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+
+        naverbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplication(), OAuthSampleActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
     }

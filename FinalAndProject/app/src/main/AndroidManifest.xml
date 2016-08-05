@@ -27,7 +27,13 @@
         <activity android:name=".member.Mem_Join_Success_page" />
         <activity android:name=".member.Mem_Modify_Page" />
         <activity android:name=".member.Mem_Join_Page" />
+<<<<<<< Updated upstream
         <activity android:name=".member.Mem_Category_Interest" />
+=======
+        <activity android:name=".Mem_Category_Interest" />
+
+
+>>>>>>> Stashed changes
         <activity android:name=".Main_Page">
         </activity>
         <activity android:name=".test.TestCalender"></activity>
@@ -38,9 +44,19 @@
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar">
+     </activity>
 
 
-        </activity>
+
+        <!-- 네이버 라이브러리 -->
+        <activity android:name=".naver.OAuthSampleActivity"/>
+
+        <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"
+            android:label="OAuth2.0 In-app"/>
+
+
     </application>
 
 </manifest>
