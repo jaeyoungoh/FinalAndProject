@@ -229,6 +229,7 @@ public class Main_Page extends Activity {
         }
     }
 
+
     public class RequestApiTask extends AsyncTask<Void, Void, String> {
         @Override
         protected void onPreExecute() {

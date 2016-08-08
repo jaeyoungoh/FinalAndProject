@@ -86,6 +86,8 @@ public class Mem_Join_Page extends Activity {
 
 
 
+
+
     public void Cancle(View v) { //취소 부분
         if (v.getId() == cancle.getId()) {
             for (int i = 0; i < texts.length; i++) {

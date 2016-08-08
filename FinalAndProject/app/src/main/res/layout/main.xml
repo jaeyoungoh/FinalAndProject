@@ -30,8 +30,8 @@ android:background="@drawable/login"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center">
-        <Button
-            android:background="#25b202"
+
+        <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
             android:id="@+id/Log_naver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
