@@ -79,11 +79,10 @@ public class Main_Page extends Activity {
         Joinbt = (Button)findViewById(R.id.joinbt);
         member_id = (EditText)findViewById(R.id.num1);
         member_pwd = (EditText)findViewById(R.id.num2);
-<<<<<<< Updated upstream
-    /*    naverbt = (Button) findViewById(R.id.naverbt);
-        daumbt = (Button) findViewById(R.id.daumbt);*/
-=======
->>>>>>> Stashed changes
+
+        naver_logout = (Button) findViewById(R.id.naver_logout);
+        naver_logout = (Button) findViewById(R.id.naversample);
+
 
 
         mOAuthLoginButton = (OAuthLoginButton) findViewById(R.id.buttonOAuthLoginImg);

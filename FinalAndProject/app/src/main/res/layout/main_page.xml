@@ -125,8 +125,6 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_weight="1">
-<<<<<<< Updated upstream
-=======
 
            <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
                android:id="@+id/buttonOAuthLoginImg"
@@ -146,7 +144,6 @@
                android:layout_height="wrap_content"
                android:layout_weight="1"
                android:text="naver sample view"/>
->>>>>>> Stashed changes
 
 
        </LinearLayout>
