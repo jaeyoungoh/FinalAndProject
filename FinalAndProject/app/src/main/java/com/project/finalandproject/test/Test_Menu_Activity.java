@@ -192,19 +192,19 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			menuLeftSlideAnimationToggle();
 			break;
 		case R.id.btn1:
-			Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT)
+			Toast.makeText(getApplicationContext(), btn1.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
 		case R.id.btn2:
-			Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT)
+			Toast.makeText(getApplicationContext(), btn2.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
 		case R.id.btn3:
-			Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT)
+			Toast.makeText(getApplicationContext(), btn3.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
 		case R.id.btn4:
-			Toast.makeText(getApplicationContext(), "4", Toast.LENGTH_SHORT)
+			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
 

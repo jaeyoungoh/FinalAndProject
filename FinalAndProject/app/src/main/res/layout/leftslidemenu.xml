@@ -10,19 +10,19 @@
         android:id="@+id/btn1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Button 1 " />
+        android:text="나의그룹보기" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Button 2 " />
+        android:text="내정보보기" />
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Button 3 " />
+        android:text="설정" />
 
     <Button
         android:id="@+id/btn4"
