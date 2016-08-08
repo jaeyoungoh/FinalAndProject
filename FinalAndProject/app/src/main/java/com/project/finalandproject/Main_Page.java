@@ -33,8 +33,8 @@ public class Main_Page extends Activity {
         Joinbt = (Button)findViewById(R.id.joinbt);
         member_id = (EditText)findViewById(R.id.num1);
         member_pwd = (EditText)findViewById(R.id.num2);
-        naverbt = (Button) findViewById(R.id.naverbt);
-        daumbt = (Button) findViewById(R.id.daumbt);
+    /*    naverbt = (Button) findViewById(R.id.naverbt);
+        daumbt = (Button) findViewById(R.id.daumbt);*/
 
 
 
