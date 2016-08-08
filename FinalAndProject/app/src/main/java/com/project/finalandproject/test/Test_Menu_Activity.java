@@ -14,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -31,13 +32,17 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	private FrameLayout.LayoutParams leftMenuLayoutPrams;
 	private int leftMenuWidth;
 	private static boolean isLeftExpanded;
-	private Button bt_left, btn1, btn2, btn3, btn4;
+	private Button btn1, btn2, btn3, btn4;
+	private ImageButton  bt_left;
+	ArrayList<Listviewitem> data;
+	Listviewitem test1,test3,test2,test4;
+	ListView listView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_menu_main);
-		FrameLayout inter = (FrameLayout)findViewById(R.id.inter);
+		LinearLayout inter = (LinearLayout) findViewById(R.id.inter);
 
 
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -49,12 +54,15 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.test_top, container,true);
 
-		ListView listView=(ListView)findViewById(R.id.listview);
-		ArrayList<Listviewitem> data=new ArrayList<>();
-		Listviewitem test1 =new Listviewitem(R.drawable.samplewide1,"test1");
-		Listviewitem test2 =new Listviewitem(R.drawable.samplewide2,"test2");
-		Listviewitem test3 =new Listviewitem(R.drawable.samplewide3,"test3");
-		Listviewitem test4 =new Listviewitem(R.drawable.samplebg,"test4");
+		((Button) findViewById(R.id.bt1)).setOnClickListener(this);
+		((Button) findViewById(R.id.bt2)).setOnClickListener(this);
+		((Button) findViewById(R.id.bt3)).setOnClickListener(this);
+		listView=(ListView)findViewById(R.id.listview);
+		data=new ArrayList<>();
+		test1 =new Listviewitem(R.drawable.samplewide1,"test1");
+		test2 =new Listviewitem(R.drawable.samplewide2,"test2");
+		test3 =new Listviewitem(R.drawable.samplewide3,"test3");
+		test4 =new Listviewitem(R.drawable.samplebg,"test4");
 		data.add(test1);
 		data.add(test2);
 		data.add(test3);
@@ -70,7 +78,6 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		data.add(test1);
 		data.add(test2);
 		data.add(test3);
-
 		ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
 		listView.setAdapter(adapter);
 
@@ -96,7 +103,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		ll_menuLayout.setLayoutParams(leftMenuLayoutPrams);
 
 		// init ui
-		bt_left = (Button) findViewById(R.id.bt_left);
+		bt_left = (ImageButton) findViewById(R.id.bt_left);
 		bt_left.setOnClickListener(this);
 
 		btn1 = (Button) findViewById(R.id.btn1);
@@ -107,6 +114,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		btn2.setOnClickListener(this);
 		btn3.setOnClickListener(this);
 		btn4.setOnClickListener(this);
+
 	}
 
 	/**
@@ -175,7 +183,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		int childCount = viewGroup.getChildCount();
 		for (int i = 0; i < childCount; i++) {
 			View view = viewGroup.getChildAt(i);
-			if (view.getId() != R.id.bt_left) {
+			if (!(view.getId() == R.id.ll_menuLayout || view.getId()==R.id.menu_bar)) {
 				view.setEnabled(enabled);
 				if (view instanceof ViewGroup) {
 					enableDisableViewGroup((ViewGroup) view, enabled);
@@ -207,7 +215,21 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
-
+			case R.id.bt1:
+				Toast.makeText(getApplicationContext(), "실험1", Toast.LENGTH_SHORT)
+						.show();
+				data.add(test3);
+				ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
+				listView.setAdapter(adapter);
+				break;
+			case R.id.bt2:
+				Toast.makeText(getApplicationContext(), "실험2", Toast.LENGTH_SHORT)
+						.show();
+				break;
+			case R.id.bt3:
+				Toast.makeText(getApplicationContext(), "실험3", Toast.LENGTH_SHORT)
+						.show();
+				break;
 		}
 
 	}
