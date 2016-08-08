@@ -1,4 +1,4 @@
-package com.project.finalandproject;
+package com.project.finalandproject.test;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +14,8 @@ import com.nhn.android.naverlogin.OAuthLogin;
 import com.nhn.android.naverlogin.OAuthLoginDefine;
 import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
+import com.project.finalandproject.Main_Page;
+import com.project.finalandproject.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -39,6 +41,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 public class login extends Activity {
 
+
     Button Log;
 
 // 네이버 로그인 요소
@@ -61,9 +64,7 @@ public class login extends Activity {
                 startActivity(intent);
             }
         });
-
         Naverinit();
-
     }
 
     private void Naverinit() {
@@ -91,14 +92,7 @@ public class login extends Activity {
                 HttpClient client = new DefaultHttpClient();
                 HttpPost post = new HttpPost(requestURL);
                 List<NameValuePair> paramList = new ArrayList<>();
-
-
-                Toast.makeText(mContext, "여기", Toast.LENGTH_SHORT).show();
-
                 new RequestApiTask().execute(); // xml 받아옴
-
-
-
             } else {
                 String errorCode = mOAuthLoginInstance.getLastErrorCode(mContext).getCode();
                 String errorDesc = mOAuthLoginInstance.getLastErrorDesc(mContext);
@@ -108,11 +102,6 @@ public class login extends Activity {
     };
 
     public class RequestApiTask extends AsyncTask<Void, Void, String> {
-        @Override
-        protected void onPreExecute() {
-            //      mApiResultText.setText((String) "");
-        }
-        public RequestApiTask(){};
         @Override
         protected String doInBackground(Void... params) {
             String url = "https://openapi.naver.com/v1/nid/getUserProfile.xml";
@@ -132,7 +121,6 @@ public class login extends Activity {
     }
 
     public void getnaverinfo(String xml) throws Exception {
-        Toast.makeText(mContext, "도착?" + xml, Toast.LENGTH_SHORT).show();
 
 
         is = new InputSource(new StringReader(xml));
@@ -144,7 +132,6 @@ public class login extends Activity {
         NodeList descNodes = doc.getElementsByTagName("response");
 
         String member_name =""; String member_id=""; String member_pwd=""; String member_email="";
-
         for (int i = 0; i < descNodes.getLength(); i++) {
             for (Node node = descNodes.item(i).getFirstChild(); node != null; node = node.getNextSibling()) {
                 if (node.getNodeName().equals("email")) {
@@ -157,17 +144,12 @@ public class login extends Activity {
                 }
             }
         }
-
         SubmitJoin(member_name, member_id, member_pwd, member_email);
-
-
 
     }
 
     public void SubmitJoin(String member_name,String member_id, String member_pwd, String member_email) { //조인 부분
 
-
-        Toast.makeText(getApplicationContext(), "최종 dbcommit전"+member_name+member_id+member_pwd+member_email, Toast.LENGTH_SHORT).show();
 
         String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
 
@@ -189,6 +171,7 @@ public class login extends Activity {
         Toast.makeText(getApplicationContext(),"가입완료",Toast.LENGTH_LONG).show();
 
     }
+
 
 
 }
