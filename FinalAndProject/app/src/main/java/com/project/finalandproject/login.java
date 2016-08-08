@@ -2,11 +2,12 @@ package com.project.finalandproject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.nhn.android.naverlogin.OAuthLogin;
@@ -38,6 +39,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 public class login extends Activity {
 
+    Button Log;
 
 // 네이버 로그인 요소
     private OAuthLoginButton mOAuthLoginButton;
@@ -45,29 +47,21 @@ public class login extends Activity {
     private static Context mContext;
     InputSource is;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Log  =(Button) findViewById(R.id.Log);
+        Log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Main_Page.class);
+                finish();
+                startActivity(intent);
+            }
+        });
 
-        LinearLayout logintype=(LinearLayout) findViewById(R.id.logintype);
-
-
-        /*for(int i=0;i<logintype.getChildCount();i++){
-            final Class c1[]={Main_Page.class,Main_Page.class};
-            logintype.getChildAt(i).setId(i);
-            logintype.getChildAt(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent=new Intent(getApplicationContext(),c1[view.getId()]);
-                    finish();
-                    startActivity(intent);
-
-                }
-            });
-        }
-
-*/
         Naverinit();
 
     }
@@ -190,7 +184,6 @@ public class login extends Activity {
             post.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
             HttpResponse response = client.execute(post);
         } catch (Exception e) {
-            Log.d("sendPost===> ", e.toString());
         }
 
         Toast.makeText(getApplicationContext(),"가입완료",Toast.LENGTH_LONG).show();
