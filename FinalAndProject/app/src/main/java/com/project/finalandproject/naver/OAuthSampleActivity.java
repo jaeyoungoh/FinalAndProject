@@ -16,6 +16,14 @@ import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 import com.project.finalandproject.R;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /// 네이버 아이디로 로그인 샘플앱
 
 /**
@@ -66,7 +74,7 @@ public class OAuthSampleActivity extends Activity {
     }
 
 
-    private void initData() {
+    public void initData() {
         mOAuthLoginInstance = OAuthLogin.getInstance();
 
         mOAuthLoginInstance.init(mContext, OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET, OAUTH_CLIENT_NAME);
@@ -77,7 +85,7 @@ public class OAuthSampleActivity extends Activity {
         //mOAuthLoginInstance.init(mContext, OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET, OAUTH_CLIENT_NAME, OAUTH_callback_intent_url);
     }
 
-    private void initView() {
+    public void initView() {
         mApiResultText = (TextView) findViewById(R.id.api_result_text);
 
         mOauthAT = (TextView) findViewById(R.id.oauth_access_token);
@@ -86,7 +94,7 @@ public class OAuthSampleActivity extends Activity {
         mOauthTokenType = (TextView) findViewById(R.id.oauth_type);
         mOAuthState = (TextView) findViewById(R.id.oauth_state);
 
-        mOAuthLoginButton = (OAuthLoginButton) findViewById(R.id.buttonOAuthLoginImg);
+        mOAuthLoginButton  = (OAuthLoginButton) findViewById(R.id.buttonOAuthLoginImg);
         mOAuthLoginButton.setOAuthLoginHandler(mOAuthLoginHandler);
 
         updateView();
@@ -111,10 +119,17 @@ public class OAuthSampleActivity extends Activity {
     /**
      * startOAuthLoginActivity() 호출시 인자로 넘기거나, OAuthLoginButton 에 등록해주면 인증이 종료되는 걸 알 수 있다.
      */
-    static private OAuthLoginHandler mOAuthLoginHandler = new OAuthLoginHandler() {
+    static public OAuthLoginHandler mOAuthLoginHandler = new OAuthLoginHandler() {
         @Override
         public void run(boolean success) {
             if (success) {
+                String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
+                HttpClient client = new DefaultHttpClient();
+                HttpPost post = new HttpPost(requestURL);
+                List<NameValuePair> paramList = new ArrayList<>();
+
+
+                Toast.makeText(mContext, "여기", Toast.LENGTH_SHORT).show();
                 String accessToken = mOAuthLoginInstance.getAccessToken(mContext);
                 String refreshToken = mOAuthLoginInstance.getRefreshToken(mContext);
                 long expiresAt = mOAuthLoginInstance.getExpiresAt(mContext);
@@ -124,6 +139,12 @@ public class OAuthSampleActivity extends Activity {
                 mOauthExpires.setText(String.valueOf(expiresAt));
                 mOauthTokenType.setText(tokenType);
                 mOAuthState.setText(mOAuthLoginInstance.getState(mContext).toString());
+                OAuthSampleActivity oa =  new OAuthSampleActivity();
+
+
+
+
+
             } else {
                 String errorCode = mOAuthLoginInstance.getLastErrorCode(mContext).getCode();
                 String errorDesc = mOAuthLoginInstance.getLastErrorDesc(mContext);
@@ -162,7 +183,7 @@ public class OAuthSampleActivity extends Activity {
     }
 
 
-    private class DeleteTokenTask extends AsyncTask<Void, Void, Void> {
+    public class DeleteTokenTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... params) {
             boolean isSuccessDeleteToken = mOAuthLoginInstance.logoutAndDeleteToken(mContext);
@@ -181,7 +202,7 @@ public class OAuthSampleActivity extends Activity {
         }
     }
 
-    private class RequestApiTask extends AsyncTask<Void, Void, String> {
+    public class RequestApiTask extends AsyncTask<Void, Void, String> {
         @Override
         protected void onPreExecute() {
             mApiResultText.setText((String) "");
@@ -200,7 +221,7 @@ public class OAuthSampleActivity extends Activity {
         }
     }
 
-    private class RefreshTokenTask extends AsyncTask<Void, Void, String> {
+    public class RefreshTokenTask extends AsyncTask<Void, Void, String> {
         @Override
         protected String doInBackground(Void... params) {
             return mOAuthLoginInstance.refreshAccessToken(mContext);
