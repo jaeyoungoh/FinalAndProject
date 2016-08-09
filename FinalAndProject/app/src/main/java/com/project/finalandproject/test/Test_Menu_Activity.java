@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -95,7 +96,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 
 		// init left menu
 		ll_menuLayout = (LinearLayout) findViewById(R.id.ll_menuLayout);
-
+		ll_menuLayout.setX(-leftMenuWidth);
 
 		leftMenuLayoutPrams = (FrameLayout.LayoutParams) ll_menuLayout
 				.getLayoutParams();
@@ -125,10 +126,10 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		if (!isLeftExpanded) {
 
 			isLeftExpanded = true;
-
+			Log.i("msg",leftMenuWidth+"");
 			// Expand
-			new OpenAnimation(ll_mainLayout, leftMenuWidth,
-					Animation.RELATIVE_TO_SELF, 0.0f,
+			new OpenAnimation(ll_menuLayout, leftMenuWidth,
+					Animation.RELATIVE_TO_SELF, 0f,
 					Animation.RELATIVE_TO_SELF, 0.75f, 0, 0.0f, 0, 0.0f);
 
 			// disable all of main view
@@ -146,6 +147,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 
 						@Override
 						public boolean onTouch(View arg0, MotionEvent arg1) {
+							/*ll_menuLayout.setX(-leftMenuWidth);*/
 							menuLeftSlideAnimationToggle();
 							return true;
 						}
@@ -155,10 +157,13 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			isLeftExpanded = false;
 
 			// close
-			new CloseAnimation(ll_mainLayout, leftMenuWidth,
-					TranslateAnimation.RELATIVE_TO_SELF, 0.75f,
-					TranslateAnimation.RELATIVE_TO_SELF, 0.0f, 0, 0.0f, 0, 0.0f);
-
+			new OpenAnimation(ll_menuLayout,0,
+					Animation.RELATIVE_TO_SELF, 0f,
+					Animation.RELATIVE_TO_SELF, -0.75f, 0, 0.0f, 0, 0.0f);
+			//LinearLayout layout, int width, int fromXType,
+			//float fromXValue, int toXType, float toXValue, int fromYType,
+			//float fromYValue, int toYType, float toYValue
+			//
 			// enable all of main view
 			FrameLayout viewGroup = (FrameLayout) findViewById(R.id.ll_fragment)
 					.getParent();
@@ -168,6 +173,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			((LinearLayout) findViewById(R.id.ll_empty))
 					.setVisibility(View.GONE);
 			findViewById(R.id.ll_empty).setEnabled(false);
+
 
 		}
 	}
