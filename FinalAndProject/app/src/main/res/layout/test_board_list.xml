@@ -58,6 +58,7 @@
                 </ListView>-->
         </FrameLayout>
             <TextView
+                android:id="@+id/board_list_title"
                 android:gravity="left|center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

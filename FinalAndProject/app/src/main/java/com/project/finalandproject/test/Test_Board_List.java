@@ -23,7 +23,7 @@ import com.project.finalandproject.R;
 
 import java.util.ArrayList;
 
-public class Test_Board extends Activity implements OnClickListener {
+public class Test_Board_List extends Activity implements OnClickListener {
 
 	/* slide menu */
 	private DisplayMetrics metrics;
@@ -41,22 +41,22 @@ public class Test_Board extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.test_board);
+		setContentView(R.layout.test_board_list);
 		LinearLayout inter = (LinearLayout) findViewById(R.id.inter);
 
 
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.testholdtitle, inter,true);
+		inflater.inflate(R.layout.testholdtitle, inter,true); // 게시판 글 목록 틀
 
 		initSildeMenu();
-		LinearLayout container = (LinearLayout) findViewById(R.id.containerInflater);
+		LinearLayout container = (LinearLayout) findViewById(R.id.containerInflater); 	// 게시판 글 목록 구간
 
 		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.test_top, container,true);
+		inflater.inflate(R.layout.test_board_top, container,true);			// 게시판 기능버튼 구간 (글쓰기, 검색, 삭제)
 
-		((Button) findViewById(R.id.bt1)).setOnClickListener(this);
-		((Button) findViewById(R.id.bt2)).setOnClickListener(this);
-		((Button) findViewById(R.id.bt3)).setOnClickListener(this);
+		((Button) findViewById(R.id.board_bt1)).setOnClickListener(this);
+		((Button) findViewById(R.id.board_bt2)).setOnClickListener(this);
+		((Button) findViewById(R.id.board_bt3)).setOnClickListener(this);
 		listView=(ListView)findViewById(R.id.listview);
 		data=new ArrayList<>();
 		test1 =new Listviewitem(R.drawable.samplewide1,"test1");
@@ -215,19 +215,19 @@ public class Test_Board extends Activity implements OnClickListener {
 			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
-			case R.id.bt1:
-				Toast.makeText(getApplicationContext(), "실험1", Toast.LENGTH_SHORT)
+			case R.id.board_bt1:
+				Toast.makeText(getApplicationContext(), "borad_bt1", Toast.LENGTH_SHORT)
 						.show();
 				data.add(test3);
 				ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
 				listView.setAdapter(adapter);
 				break;
-			case R.id.bt2:
-				Toast.makeText(getApplicationContext(), "실험2", Toast.LENGTH_SHORT)
+			case R.id.board_bt2:
+				Toast.makeText(getApplicationContext(), "borad_bt2", Toast.LENGTH_SHORT)
 						.show();
 				break;
-			case R.id.bt3:
-				Toast.makeText(getApplicationContext(), "실험3", Toast.LENGTH_SHORT)
+			case R.id.board_bt3:
+				Toast.makeText(getApplicationContext(), "borad_bt3", Toast.LENGTH_SHORT)
 						.show();
 				break;
 		}
