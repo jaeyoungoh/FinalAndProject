@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,13 +19,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.finalandproject.R;
 
 import java.util.ArrayList;
 
-public class Test_Menu_Activity extends Activity implements OnClickListener {
+public class Test_Board_Write extends Activity implements OnClickListener {
 
 	/* slide menu */
 	private DisplayMetrics metrics;
@@ -42,46 +44,39 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.test_menu_main);
+		setContentView(R.layout.test_board_list);
 		LinearLayout inter = (LinearLayout) findViewById(R.id.inter);
 
-
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.testholdtitle, inter,true);
+		inflater.inflate(R.layout.test_board_write_content, inter,true);  // 게시판 글 목록 틀
 
-		initSildeMenu();
-		LinearLayout container = (LinearLayout) findViewById(R.id.containerInflater);
+			initSildeMenu();
+		LinearLayout container = (LinearLayout) findViewById(R.id.board_write_bottom_containerInflater); // 게시판 글 목록 구간
 
 		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.test_top, container,true);
+		inflater.inflate(R.layout.test_board_write_bottom, container,true); // 게시판 기능버튼 구간 (글쓰기, 검색, 삭제)
 
-		((Button) findViewById(R.id.bt1)).setOnClickListener(this);
-		((Button) findViewById(R.id.bt2)).setOnClickListener(this);
-		((Button) findViewById(R.id.bt3)).setOnClickListener(this);
-		listView=(ListView)findViewById(R.id.listview);
-		data=new ArrayList<>();
-		test1 =new Listviewitem(R.drawable.samplewide1,"test1");
-		test2 =new Listviewitem(R.drawable.samplewide2,"test2");
-		test3 =new Listviewitem(R.drawable.samplewide3,"test3");
-		test4 =new Listviewitem(R.drawable.samplebg,"test4");
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		ListviewAdapter adapter =new ListviewAdapter(this,R.layout.item,data);
-		listView.setAdapter(adapter);
+		((Button) findViewById(R.id.board_write_bt1)).setOnClickListener(this);
+		((Button) findViewById(R.id.board_write_bt2)).setOnClickListener(this);
+		((Button) findViewById(R.id.board_write_bt3)).setOnClickListener(this);
 
+		((TextView) findViewById(R.id.board_list_title)).setText("글쓰기");
+
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add("계산기"); menu.add("이미지변경"); menu.add("타로");menu.add("로또");
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getTitle().equals("글쓰기")){
+		Toast.makeText(getApplicationContext(), "글쓰기", Toast.LENGTH_SHORT).show();
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	private void initSildeMenu() {
@@ -96,7 +91,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 
 		// init left menu
 		ll_menuLayout = (LinearLayout) findViewById(R.id.ll_menuLayout);
-		ll_menuLayout.setX(-leftMenuWidth);
+
 
 		leftMenuLayoutPrams = (FrameLayout.LayoutParams) ll_menuLayout
 				.getLayoutParams();
@@ -126,10 +121,10 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		if (!isLeftExpanded) {
 
 			isLeftExpanded = true;
-			Log.i("msg",leftMenuWidth+"");
+
 			// Expand
-			new OpenAnimation(ll_menuLayout, leftMenuWidth,
-					Animation.RELATIVE_TO_SELF, 0f,
+			new OpenAnimation(ll_mainLayout, leftMenuWidth,
+					Animation.RELATIVE_TO_SELF, 0.0f,
 					Animation.RELATIVE_TO_SELF, 0.75f, 0, 0.0f, 0, 0.0f);
 
 			// disable all of main view
@@ -147,7 +142,6 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 
 						@Override
 						public boolean onTouch(View arg0, MotionEvent arg1) {
-							/*ll_menuLayout.setX(-leftMenuWidth);*/
 							menuLeftSlideAnimationToggle();
 							return true;
 						}
@@ -157,13 +151,10 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			isLeftExpanded = false;
 
 			// close
-			new OpenAnimation(ll_menuLayout,0,
-					Animation.RELATIVE_TO_SELF, 0f,
-					Animation.RELATIVE_TO_SELF, -0.75f, 0, 0.0f, 0, 0.0f);
-			//LinearLayout layout, int width, int fromXType,
-			//float fromXValue, int toXType, float toXValue, int fromYType,
-			//float fromYValue, int toYType, float toYValue
-			//
+			new CloseAnimation(ll_mainLayout, leftMenuWidth,
+					TranslateAnimation.RELATIVE_TO_SELF, 0.75f,
+					TranslateAnimation.RELATIVE_TO_SELF, 0.0f, 0, 0.0f, 0, 0.0f);
+
 			// enable all of main view
 			FrameLayout viewGroup = (FrameLayout) findViewById(R.id.ll_fragment)
 					.getParent();
@@ -173,7 +164,6 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			((LinearLayout) findViewById(R.id.ll_empty))
 					.setVisibility(View.GONE);
 			findViewById(R.id.ll_empty).setEnabled(false);
-
 
 		}
 	}
@@ -221,19 +211,18 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
-			case R.id.bt1:
-				Toast.makeText(getApplicationContext(), "실험1", Toast.LENGTH_SHORT)
+			case R.id.board_write_bt1:
+				Toast.makeText(getApplicationContext(), "board_write_bt1", Toast.LENGTH_SHORT)
 						.show();
 				data.add(test3);
-				ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
-				listView.setAdapter(adapter);
+
 				break;
-			case R.id.bt2:
-				Toast.makeText(getApplicationContext(), "실험2", Toast.LENGTH_SHORT)
+			case R.id.board_write_bt2:
+				Toast.makeText(getApplicationContext(), "board_write_bt2", Toast.LENGTH_SHORT)
 						.show();
 				break;
-			case R.id.bt3:
-				Toast.makeText(getApplicationContext(), "실험3", Toast.LENGTH_SHORT)
+			case R.id.board_write_bt3:
+				Toast.makeText(getApplicationContext(), "board_write_bt3", Toast.LENGTH_SHORT)
 						.show();
 				break;
 		}
