@@ -23,7 +23,7 @@ import com.project.finalandproject.R;
 
 import java.util.ArrayList;
 
-public class Test_Menu_Activity extends Activity implements OnClickListener {
+public class Test_Board extends Activity implements OnClickListener {
 
 	/* slide menu */
 	private DisplayMetrics metrics;
@@ -41,7 +41,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.test_menu_main);
+		setContentView(R.layout.test_board);
 		LinearLayout inter = (LinearLayout) findViewById(R.id.inter);
 
 
