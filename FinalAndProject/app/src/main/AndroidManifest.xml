@@ -44,7 +44,6 @@
 
 
         <!-- 네이버 라이브러리 -->
-        <activity android:name=".naver.OAuthSampleActivity"/>
 
         <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
