@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/android
+﻿# Created by https://www.gitignore.io/api/android
 
 ### Android ###
 # Built application files
@@ -64,6 +64,8 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+# AndroidManifest.xml 추적 금지
+FinalAndProject/app/src/main/AndroidManifest.xml
 
 #idea �κ� �߰�
 .idea/
