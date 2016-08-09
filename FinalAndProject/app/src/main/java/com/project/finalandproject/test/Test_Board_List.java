@@ -2,6 +2,7 @@ package com.project.finalandproject.test;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -24,6 +25,8 @@ import com.project.finalandproject.R;
 import java.util.ArrayList;
 
 public class Test_Board_List extends Activity implements OnClickListener {
+
+	Intent intent;
 
 	/* slide menu */
 	private DisplayMetrics metrics;
@@ -215,12 +218,18 @@ public class Test_Board_List extends Activity implements OnClickListener {
 			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
+
+
 			case R.id.board_bt1:
+				intent = new Intent(getApplication(), Test_Board_Write.class);
+				startActivity(intent);
+/*
 				Toast.makeText(getApplicationContext(), "borad_bt1", Toast.LENGTH_SHORT)
 						.show();
 				data.add(test3);
 				ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
 				listView.setAdapter(adapter);
+*/
 				break;
 			case R.id.board_bt2:
 				Toast.makeText(getApplicationContext(), "borad_bt2", Toast.LENGTH_SHORT)

@@ -35,28 +35,8 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/c2"
                     android:background="@drawable/honeycomb" />
-
-
-            <!--    <LinearLayout
-                    android:id="@+id/containerInflater"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-
-                </LinearLayout>
-
-                <ListView
-                    android:id="@+id/listview"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="7"
-                    android:divider="#ffcc22"
-                    android:dividerHeight="1.5dp">
-
-                </ListView>-->
         </FrameLayout>
+
             <TextView
                 android:id="@+id/board_list_title"
                 android:gravity="left|center"
@@ -68,7 +48,9 @@
                 android:textColor="#FFF"
                 android:layout_weight="5"/>
 
+
         </LinearLayout>
+
     </FrameLayout>
 
     <LinearLayout
@@ -122,7 +104,9 @@
                     android:orientation="horizontal"
                     android:id="@+id/inter"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></LinearLayout>
+                    android:layout_height="match_parent">
+
+                </LinearLayout>
 
             </LinearLayout>
 

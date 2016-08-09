@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -59,30 +61,22 @@ public class Test_Board_Write extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.board_write_bt3)).setOnClickListener(this);
 
 		((TextView) findViewById(R.id.board_list_title)).setText("글쓰기");
- 		listView=(ListView)findViewById(R.id.listview);
-		data= new ArrayList<>();
-		test1 = new Listviewitem(R.drawable.samplewide1,"test1");
-		test2 = new Listviewitem(R.drawable.samplewide2,"test2");
-		test3 = new Listviewitem(R.drawable.samplewide3,"test3");
-		test4 = new Listviewitem(R.drawable.samplebg,"test4");
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		ListviewAdapter adapter =new ListviewAdapter(this,R.layout.item,data);
-		listView.setAdapter(adapter);
 
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add("계산기"); menu.add("이미지변경"); menu.add("타로");menu.add("로또");
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getTitle().equals("글쓰기")){
+		Toast.makeText(getApplicationContext(), "글쓰기", Toast.LENGTH_SHORT).show();
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	private void initSildeMenu() {
@@ -221,8 +215,7 @@ public class Test_Board_Write extends Activity implements OnClickListener {
 				Toast.makeText(getApplicationContext(), "board_write_bt1", Toast.LENGTH_SHORT)
 						.show();
 				data.add(test3);
-				ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item,data);
-				listView.setAdapter(adapter);
+
 				break;
 			case R.id.board_write_bt2:
 				Toast.makeText(getApplicationContext(), "board_write_bt2", Toast.LENGTH_SHORT)
