@@ -65,7 +65,6 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 # AndroidManifest.xml 추적 금지
-FinalAndProject/app/src/main/AndroidManifest.xml
 
 #idea �κ� �߰�
 .idea/
