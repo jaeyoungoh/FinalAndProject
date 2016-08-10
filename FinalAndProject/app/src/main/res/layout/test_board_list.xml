@@ -45,7 +45,7 @@
                 android:text="제목"
                 android:textSize="30dp"
                 android:textStyle="bold"
-                android:textColor="@color/c2"
+                android:textColor="@color/c6"
                 android:layout_weight="5"/>
 
 

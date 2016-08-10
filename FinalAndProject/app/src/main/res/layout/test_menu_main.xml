@@ -33,7 +33,7 @@
                     android:id="@+id/bt_left"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:backgroundTint="@color/c2"
+                    android:backgroundTint="#aafcec83"
                     android:background="@drawable/honeycomb" />
 
 

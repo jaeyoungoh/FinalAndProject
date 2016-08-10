@@ -58,7 +58,8 @@ android:background="@drawable/login"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="#ffffff"/>
+                    android:background="@drawable/round"
+                    />
 
 
             </LinearLayout>
@@ -81,12 +82,13 @@ android:background="@drawable/login"
                     android:textSize="15dp" />
 
                 <EditText
+                    android:background="@drawable/round"
                     android:inputType="textPassword"
                     android:id="@+id/num2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="#ffffff"/>
+                    />
 
             </LinearLayout>
 
@@ -101,12 +103,14 @@ android:background="@drawable/login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|top"
+                    android:layout_marginTop="5dp"
                     >
 
 
                     <Button
+                        android:background="@drawable/round1"
                         android:layout_margin="10dp"
-                        android:background="@color/c2"
+                        android:backgroundTint="@color/c2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="Login"
@@ -115,8 +119,9 @@ android:background="@drawable/login"
                         android:textStyle="bold" />
 
                     <Button
+                        android:background="@drawable/round1"
                         android:layout_margin="10dp"
-                        android:background="@color/c4"
+                        android:backgroundTint="@color/c4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="Join"

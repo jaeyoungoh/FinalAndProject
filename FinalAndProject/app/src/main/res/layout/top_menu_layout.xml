@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/c1"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/bt_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingTop="20px"
+            android:paddingBottom="20px"
+            android:layout_weight="1">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center|left"
+                android:layout_weight="1"
+                android:id="@+id/back"
+                android:backgroundTint="#aafcec83"
+                android:background="@drawable/backward_arrow" />
+        </LinearLayout>
+        <TextView
+            android:paddingLeft="20px"
+            android:id="@+id/title"
+            android:gravity="left|center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="제목"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_weight="8"/>
+        <TextView
+            android:paddingRight="20px"
+            android:id="@+id/next"
+            android:gravity="right|center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="넥스트"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+</LinearLayout>

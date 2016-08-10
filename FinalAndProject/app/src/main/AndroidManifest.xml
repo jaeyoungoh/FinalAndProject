@@ -12,11 +12,6 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".test.Test_Menu_Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
@@ -38,6 +33,11 @@
             android:theme="@style/AppTheme.NoActionBar">
      </activity>
         <activity android:name=".Main_Page2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Main_page3"></activity>
 
