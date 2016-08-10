@@ -2,9 +2,6 @@ package com.project.finalandproject.test;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -16,7 +13,6 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -26,12 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.project.finalandproject.R;
-import com.project.finalandproject.member.Mem_Join_Page;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 

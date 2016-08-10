@@ -12,6 +12,15 @@ import android.widget.Toast;
 import com.project.finalandproject.Main_Page;
 import com.project.finalandproject.R;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by Administrator on 2016-07-14.
@@ -34,7 +43,7 @@ public class Mem_Category_Interest extends Activity {
         setContentView(R.layout.mem_category_interest);
         chk = (Button) findViewById(R.id.chk);
         back = (Button) findViewById(R.id.back);
-        allbox = (CheckBox) findViewById(R.id.checkbox_all);
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -50,7 +59,7 @@ public class Mem_Category_Interest extends Activity {
         if (view instanceof CheckBox) {
             boolean checked = ((CheckBox) view).isChecked();
 
-            if (view.getId() == allbox.getId() && checked) { //모두선택
+        /*    if (view.getId() == allbox.getId() && checked) { //모두선택
                 for (int p = 0; p < 6; p++) {
                     checkbox[p].setChecked(true);
                 }
@@ -60,7 +69,7 @@ public class Mem_Category_Interest extends Activity {
                     checkbox[p].setChecked(false);
                 }
                 Toast.makeText(getApplicationContext(), "전체 선택 해제", Toast.LENGTH_SHORT).show();
-            }
+            }*/
 
             for (int i = 0; i < checkboxs.length; i++) {
                 if (view.getId() == checkbox[i].getId()) {
@@ -124,6 +133,7 @@ public class Mem_Category_Interest extends Activity {
     {
 
         member_interest = "";
+        total=0;
         for (int j = 0; j < checkboxs.length; j++) {
             if (checkbox[j].isChecked()) {
                 member_interest += checkbox[j].getText().toString() + ",";
@@ -131,10 +141,18 @@ public class Mem_Category_Interest extends Activity {
             }
         }
         if (total < 2) {
-            Toast.makeText(getApplicationContext(), "최소2개부터 선택 가능합니다.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "최소2개부터 선택 가능합니다."+total, Toast.LENGTH_LONG).show();
         } else if (total >= 6) {
-            Toast.makeText(getApplicationContext(), "최대5개까지만 선택 가능합니다.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "최대5개까지만 선택 가능합니다."+total, Toast.LENGTH_LONG).show();
         } else {
+
+            String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
+
+            HttpClient client = new DefaultHttpClient();
+            HttpPost post = new HttpPost(requestURL);
+            List<NameValuePair> paramList = new ArrayList<>();
+            paramList.add(new BasicNameValuePair("interest", member_interest));
+
             Toast.makeText(getApplicationContext(), member_interest, Toast.LENGTH_LONG).show();
             intent = new Intent(getApplication(), Mem_Join_Success_page.class);
             startActivity(intent);

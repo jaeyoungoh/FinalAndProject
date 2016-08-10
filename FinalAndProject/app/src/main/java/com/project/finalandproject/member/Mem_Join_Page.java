@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.project.finalandproject.Main_Page;
 import com.project.finalandproject.R;
 
 import org.apache.http.HttpResponse;
@@ -23,8 +22,6 @@ import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 
 public class Mem_Join_Page extends Activity {
@@ -40,7 +37,6 @@ public class Mem_Join_Page extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mem_join_page);
-        goback = (Button) findViewById(R.id.goback);
         cancle = (Button) findViewById(R.id.cancle);
         joinsubmit = (Button) findViewById(R.id.joinsubmit);
         for (int i = 0; i < texts.length; i++) {
@@ -55,10 +51,10 @@ public class Mem_Join_Page extends Activity {
 
     public void SubmitJoin(View v) { //조인 부분
 
-            member_name =edtTxt[0].getText().toString();
-            member_id = edtTxt[1].getText().toString();
-            member_pwd = edtTxt[2].getText().toString();
-            member_email = edtTxt[3].getText().toString();
+        member_name = edtTxt[0].getText().toString();
+        member_id = edtTxt[1].getText().toString();
+        member_pwd = edtTxt[2].getText().toString();
+        member_email = edtTxt[3].getText().toString();
 
 
         String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
@@ -79,13 +75,10 @@ public class Mem_Join_Page extends Activity {
             Log.d("sendPost===> ", e.toString());
         }
 
-        Toast.makeText(getApplicationContext(),"가입완료",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
         intent = new Intent(getApplication(), Mem_Category_Interest.class);
         startActivity(intent);
     }
-
-
-
 
 
     public void Cancle(View v) { //취소 부분
@@ -97,10 +90,5 @@ public class Mem_Join_Page extends Activity {
     }
 
 
-    public void Goback(View v) { //뒤로가기 부분
-        if (v.getId() == goback.getId()) {
-            intent = new Intent(getApplication(), Main_Page.class);
-            startActivity(intent);
-        }
-    }
 }
+

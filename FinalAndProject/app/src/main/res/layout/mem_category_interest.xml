@@ -28,13 +28,6 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-        <CheckBox android:id="@+id/checkbox_all"
-            android:layout_width="0dp"
-            android:text="모두선택"
-            android:layout_height="wrap_content"
-            android:onClick="onCheckboxClicked"
-            android:layout_weight="1"            android:layout_gravity="center"/>
-
 
     </LinearLayout>
 

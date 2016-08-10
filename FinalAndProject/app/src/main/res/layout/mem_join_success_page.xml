@@ -26,6 +26,8 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/join_success_bt"
+            android:onClick="GoToMain"
             android:text="이용하러 가기 GO GO!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

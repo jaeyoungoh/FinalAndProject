@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.project.finalandproject.R;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.Info;
 import com.project.finalandproject.member.Mem_Join_Page;
+import com.project.finalandproject.test.Test_Menu_Activity;
 
 /**
  * Created by 김희윤 on 2016-08-08.
@@ -42,6 +42,9 @@ public class Main_page3 extends Activity{
 
         if(Info.connServer("login", m)){
             Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplication(), Test_Menu_Activity.class);
+            startActivity(intent);
+            finish();
         } else
             Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
 
