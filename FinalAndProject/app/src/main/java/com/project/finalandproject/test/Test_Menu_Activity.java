@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.project.finalandproject.R;
 import com.project.finalandproject.member.Mem_Join_Page;
@@ -134,6 +135,8 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
                 }
                 ((LinearLayout)view).setBackgroundColor(getResources().getColor(R.color.c7));
                 ((TextView)((LinearLayout)view).getChildAt(1)).setTextColor(getResources().getColor(R.color.c5));
+                ((TextView)((LinearLayout)view).getChildAt(0)).setSelected(true);
+                menuLeftSlideAnimationToggle();
 
 
             }
