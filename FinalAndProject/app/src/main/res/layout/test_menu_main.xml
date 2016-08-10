@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="20dp"
+                android:padding="15dp"
                 >
 
                 <ImageButton
@@ -62,7 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="제목"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#FFF"
                 android:layout_weight="5"/>
@@ -102,7 +102,7 @@
                     android:id="@+id/ll_empty"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="#81535353"
+                    android:background="#c1000000"
                     android:visibility="gone"
                     android:orientation="vertical"/>
 

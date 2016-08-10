@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.project.finalandproject.R;
@@ -42,4 +43,9 @@ public class ListviewAdapter extends BaseAdapter {
         name.setText(listviewitem.getName());
         return convertView;
     }
+    public void setColor(){
+
+    }
+
+
 }

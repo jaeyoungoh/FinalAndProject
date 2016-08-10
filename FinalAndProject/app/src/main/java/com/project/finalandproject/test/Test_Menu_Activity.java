@@ -2,6 +2,10 @@ package com.project.finalandproject.test;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.XmlResourceParser;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -13,14 +17,20 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.member.Mem_Join_Page;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -35,10 +45,10 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	private static boolean isLeftExpanded;
 	private Button btn1, btn2, btn3, btn4;
 	private ImageButton  bt_left;
-	ArrayList<Listviewitem> data;
+	ArrayList<Listviewitem> data,data2;
 	Listviewitem test1,test3,test2,test4;
-	ListView listView;
-
+	ListView listView,menu_list1,menu_list2;
+    LinearLayout container;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,40 +60,44 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		inflater.inflate(R.layout.testholdtitle, inter,true);
 
 		initSildeMenu();
-		LinearLayout container = (LinearLayout) findViewById(R.id.containerInflater);
+		container = (LinearLayout) findViewById(R.id.containerInflater);
 
 		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.test_top, container,true);
-
+        //메뉴1 버튼 추가.
 		((Button) findViewById(R.id.bt1)).setOnClickListener(this);
 		((Button) findViewById(R.id.bt2)).setOnClickListener(this);
 		((Button) findViewById(R.id.bt3)).setOnClickListener(this);
-		listView=(ListView)findViewById(R.id.listview);
-		data=new ArrayList<>();
-		test1 =new Listviewitem(R.drawable.samplewide1,"test1");
-		test2 =new Listviewitem(R.drawable.samplewide2,"test2");
-		test3 =new Listviewitem(R.drawable.samplewide3,"test3");
-		test4 =new Listviewitem(R.drawable.samplebg,"test4");
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		data.add(test4);
-		data.add(test1);
-		data.add(test2);
-		data.add(test3);
-		ListviewAdapter adapter =new ListviewAdapter(this,R.layout.item,data);
-		listView.setAdapter(adapter);
+
+        //리스트뷰 아이템추가
+		itemInsert();
 
 	}
-
+    private void itemInsert(){
+        listView=(ListView)findViewById(R.id.listview);
+        data=new ArrayList<>();
+        test1 =new Listviewitem(R.drawable.samplewide1,"test1");
+        test2 =new Listviewitem(R.drawable.samplewide2,"test2");
+        test3 =new Listviewitem(R.drawable.samplewide3,"test3");
+        test4 =new Listviewitem(R.drawable.samplebg,"test4");
+        data.add(test1);
+        data.add(test2);
+        data.add(test3);
+        data.add(test4);
+        data.add(test1);
+        data.add(test2);
+        data.add(test3);
+        data.add(test4);
+        data.add(test1);
+        data.add(test2);
+        data.add(test3);
+        data.add(test4);
+        data.add(test1);
+        data.add(test2);
+        data.add(test3);
+        ListviewAdapter adapter =new ListviewAdapter(this,R.layout.item,data);
+        listView.setAdapter(adapter);
+    }
 	private void initSildeMenu() {
 
 		// init left menu width
@@ -97,6 +111,35 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		// init left menu
 		ll_menuLayout = (LinearLayout) findViewById(R.id.ll_menuLayout);
 		ll_menuLayout.setX(-leftMenuWidth);
+        //메뉴 아이템 추가.
+        //홈,만남검색, 그룹검색,나의그룹
+        menu_list1=(ListView) findViewById(R.id.menu_list);
+        data2=new ArrayList<Listviewitem>();
+        data2.add(new Listviewitem(R.drawable.ic_home_black_48dp,"홈"));
+        data2.add(new Listviewitem(R.drawable.ic_search_black_48dp,"검색"));
+        data2.add(new Listviewitem(R.drawable.ic_event_black_48dp,"일정관리"));
+        data2.add(new Listviewitem(R.drawable.ic_account_circle_black_48dp,"나의그룹"));
+        ListviewAdapter adapter =new ListviewAdapter(this,R.layout.item1,data2);
+        menu_list1.setAdapter(adapter);
+        menu_list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("msg1",adapterView.getCount()+"");
+                for(int j=0;j<adapterView.getCount();j++){
+                    LinearLayout ll=((LinearLayout)((ListView)view.getParent()).getChildAt(j));
+                    TextView tv=(TextView)ll.getChildAt(1);
+                    ImageView iv=(ImageView)ll.getChildAt(0);
+                    ll.setBackgroundColor(Color.WHITE);
+                    tv.setTextColor(getResources().getColor(R.color.c9));
+                }
+                ((LinearLayout)view).setBackgroundColor(getResources().getColor(R.color.c7));
+                ((TextView)((LinearLayout)view).getChildAt(1)).setTextColor(getResources().getColor(R.color.c5));
+
+
+            }
+
+        });
+        menu_list2=(ListView) findViewById(R.id.menu_list2);
 
 		leftMenuLayoutPrams = (FrameLayout.LayoutParams) ll_menuLayout
 				.getLayoutParams();
@@ -107,6 +150,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		bt_left = (ImageButton) findViewById(R.id.bt_left);
 		bt_left.setOnClickListener(this);
 
+/*
 		btn1 = (Button) findViewById(R.id.btn1);
 		btn2 = (Button) findViewById(R.id.btn2);
 		btn3 = (Button) findViewById(R.id.btn3);
@@ -115,6 +159,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		btn2.setOnClickListener(this);
 		btn3.setOnClickListener(this);
 		btn4.setOnClickListener(this);
+*/
 
 	}
 
@@ -205,7 +250,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		case R.id.bt_left:
 			menuLeftSlideAnimationToggle();
 			break;
-		case R.id.btn1:
+/*		case R.id.btn1:
 			Toast.makeText(getApplicationContext(), btn1.getText(), Toast.LENGTH_SHORT)
 					.show();
 			break;
@@ -220,7 +265,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		case R.id.btn4:
 			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
 					.show();
-			break;
+			break;*/
 			case R.id.bt1:
 				Toast.makeText(getApplicationContext(), "실험1", Toast.LENGTH_SHORT)
 						.show();

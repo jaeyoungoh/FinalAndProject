@@ -30,7 +30,6 @@
         <activity android:name=".Main_Page">
         </activity>
         <activity android:name=".test.TestCalender"></activity>
-        <activity android:name=".MainActivity" />
 
 
         <activity

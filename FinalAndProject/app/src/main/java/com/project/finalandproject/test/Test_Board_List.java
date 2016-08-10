@@ -109,14 +109,14 @@ public class Test_Board_List extends Activity implements OnClickListener {
 		bt_left = (ImageButton) findViewById(R.id.bt_left);
 		bt_left.setOnClickListener(this);
 
-		btn1 = (Button) findViewById(R.id.btn1);
+/*		btn1 = (Button) findViewById(R.id.btn1);
 		btn2 = (Button) findViewById(R.id.btn2);
 		btn3 = (Button) findViewById(R.id.btn3);
 		btn4 = (Button) findViewById(R.id.btn4);
 		btn1.setOnClickListener(this);
 		btn2.setOnClickListener(this);
 		btn3.setOnClickListener(this);
-		btn4.setOnClickListener(this);
+		btn4.setOnClickListener(this);*/
 
 	}
 
@@ -202,22 +202,7 @@ public class Test_Board_List extends Activity implements OnClickListener {
 		case R.id.bt_left:
 			menuLeftSlideAnimationToggle();
 			break;
-		case R.id.btn1:
-			Toast.makeText(getApplicationContext(), btn1.getText(), Toast.LENGTH_SHORT)
-					.show();
-			break;
-		case R.id.btn2:
-			Toast.makeText(getApplicationContext(), btn2.getText(), Toast.LENGTH_SHORT)
-					.show();
-			break;
-		case R.id.btn3:
-			Toast.makeText(getApplicationContext(), btn3.getText(), Toast.LENGTH_SHORT)
-					.show();
-			break;
-		case R.id.btn4:
-			Toast.makeText(getApplicationContext(), btn4.getText(), Toast.LENGTH_SHORT)
-					.show();
-			break;
+
 
 
 			case R.id.board_bt1:
