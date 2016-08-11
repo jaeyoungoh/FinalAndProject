@@ -44,7 +44,6 @@ public class Main_page3 extends Activity{
             Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplication(), Test_Menu_Activity.class);
             startActivity(intent);
-            finish();
         } else
             Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
 

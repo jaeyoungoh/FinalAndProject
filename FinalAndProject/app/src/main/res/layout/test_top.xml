@@ -9,7 +9,7 @@
         android:orientation="horizontal">
     <Button
         android:id="@+id/bt1"
-        android:background="@color/c8"
+        android:background="@color/c1"
         android:layout_weight="1"
         android:textStyle="bold"
         android:text="홈"
@@ -18,7 +18,7 @@
         android:layout_height="match_parent" />
     <Button
         android:id="@+id/bt2"
-        android:background="@color/c8"
+        android:background="@color/c1"
         android:layout_weight="1"
         android:textStyle="bold"
         android:text="그룹검색"
@@ -27,7 +27,7 @@
         android:layout_height="match_parent" />
     <Button
         android:id="@+id/bt3"
-        android:background="@color/c8"
+        android:background="@color/c1"
         android:layout_weight="1"
         android:textStyle="bold"
         android:text="일정관리"
@@ -36,7 +36,7 @@
         android:layout_height="match_parent" />
         <Button
             android:id="@+id/bt4"
-            android:background="@color/c8"
+            android:background="@color/c1"
             android:layout_weight="1"
             android:text="나의그룹"
             android:textColor="@color/c6"

@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:id="@+id/gathering_list"
     >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
@@ -12,5 +15,28 @@
         android:dividerHeight="1px">
 
     </ListView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"/>
+            <ImageButton
+                android:scaleType="fitCenter"
+                android:layout_height="0dp"
+                android:layout_width="40dp"
+                android:padding="10dp"
+                android:layout_margin="20dp"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/mathematical_addition_sign"
+                android:background="@drawable/shape"
+                android:backgroundTint="@color/c8"
 
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+    </FrameLayout>
 </LinearLayout>

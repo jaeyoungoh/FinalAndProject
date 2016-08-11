@@ -6,12 +6,12 @@
 
     <color name="c1">#2a220d</color>
     <color name="c2">#f2e056</color>
-    <color name="c3">#dfb85d</color>
-    <color name="c4">#d99518</color>
+    <color name="c3">#e9cc88</color>
+    <color name="c4">#deb05d</color>
     <color name="c5">#d10061</color>
     <color name="c6">#e8dbb9</color>
-    <color name="c7">#dadada</color>
+    <color name="c7">#ececec</color>
     <color name="c8">#56492c</color>
     <color name="c9">#4d4d4d</color>
-
+    <color name="c0">#ffa366</color>
 </resources>
