@@ -2,17 +2,17 @@ package com.project.finalandproject.dto;
 
 public class MemberDTO {
 	
-	private String id;
-	private String pwd;
-	private String name;
-	private String email;
-	private String birth;
-	private String interest;
-	private String location;
-	private String post;
-	private String address;
-	private String sex;
-	private String phone;
+	private String id; // 아이디
+	private String pwd; // 비번
+	private String name; // 이름
+	private String email; // 이메일
+	private String birth; // 생일
+	private String interest; // 관심사
+	private String location; //지역
+	private String post; //우편번호
+	private String address; //주소
+	private String sex; //성별
+	private String phone; //폰 번호
 	
 	public MemberDTO() {}
 	

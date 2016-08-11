@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
-import com.project.finalandproject.member.Info;
 import com.project.finalandproject.member.Mem_Join_Page;
 
 /**
@@ -49,7 +49,7 @@ public class Main_Page extends Activity {
         m.setId(member_id.getText().toString());
         m.setPwd(member_pwd.getText().toString());
 
-        if(Info.connServer("login", m)){
+        if(MemConn.connServer("login", m)){
             Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
         } else
             Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();

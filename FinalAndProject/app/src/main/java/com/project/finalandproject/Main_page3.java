@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
-import com.project.finalandproject.member.Info;
 import com.project.finalandproject.member.Mem_Join_Page;
 import com.project.finalandproject.test.Test_Menu_Activity;
 
@@ -40,7 +40,7 @@ public class Main_page3 extends Activity{
         m.setId(member_id.getText().toString());
         m.setPwd(member_pwd.getText().toString());
 
-        if(Info.connServer("login", m)){
+        if(MemConn.connServer("login", m)){
             Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplication(), Test_Menu_Activity.class);
             startActivity(intent);
