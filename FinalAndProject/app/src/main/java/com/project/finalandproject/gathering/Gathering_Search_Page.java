@@ -1,6 +1,7 @@
 package com.project.finalandproject.gathering;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,13 +20,14 @@ public class Gathering_Search_Page extends Activity {
 
 
     String title, sex, area, hash;
-
+    Intent intent;
 
     int radios[] = {R.id.radio_man, R.id.radio_woman, R.id.radio_dontcaresex};
     int serachbts[] = {R.id.title_search_bt, R.id.sex_search_bt, R.id.area_search_bt, R.id.hashtag_search_bt,
             R.id.total_search_bt};
     RadioButton radiobt[] = new RadioButton[radios.length];
     Button serachbt[] = new Button[serachbts.length];
+    Button cancle;
     EditText search_title_txt, hashtag_search_txt;
     Spinner spinnerarea;
     ArrayAdapter areaAdapter;
@@ -36,7 +38,7 @@ public class Gathering_Search_Page extends Activity {
         setContentView(R.layout.gathering_search_page);
         search_title_txt = (EditText) findViewById(R.id.search_title_txt);
         hashtag_search_txt = (EditText) findViewById(R.id.hashtag_search_txt);
-
+        cancle = (Button)findViewById(R.id.cancle);
 
         spinnerarea = (Spinner) findViewById(R.id.spinner_area);
         areaAdapter = ArrayAdapter.createFromResource(this, R.array.area, android.R.layout.simple_spinner_dropdown_item);
@@ -84,15 +86,20 @@ public class Gathering_Search_Page extends Activity {
             area = spinnerarea.getSelectedItem().toString();
             hash = hashtag_search_txt.getText().toString();
 
-            if (title == null || title==" " || sex == null || area == null || hash == null || hash==" ") {
-
-                Toast.makeText(getApplicationContext(), "모두 입력후 눌러주세요."+title + "//" + sex + "//" + area + "//" + hash, Toast.LENGTH_LONG).show();
+            if (title == null || sex == null || area == null || hash == null) { //Null 체크
+                Toast.makeText(getApplicationContext(), "모두 입력후 눌러주세요.", Toast.LENGTH_LONG).show();
             } else {
-
-                
                 Toast.makeText(getApplicationContext(), title + "//" + sex + "//" + area + "//" + hash, Toast.LENGTH_LONG).show();
             }
         }
 
+    }
+
+    public void Cancle (View v){
+        if(v.getId()==cancle.getId()){
+            intent = new Intent(getApplication(), Gathering_Search_Page.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
