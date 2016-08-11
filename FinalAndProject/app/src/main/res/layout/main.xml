@@ -36,7 +36,6 @@ android:background="@drawable/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="NAVER 로그인"
-            android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button

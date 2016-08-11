@@ -65,7 +65,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.bt1)).setOnClickListener(this);
 		((Button) findViewById(R.id.bt2)).setOnClickListener(this);
 		((Button) findViewById(R.id.bt3)).setOnClickListener(this);
-
+		((Button) findViewById(R.id.bt4)).setOnClickListener(this);
         //리스트뷰 아이템추가
 
 	}
@@ -97,27 +97,9 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //리스트뷰 아이템선택시 작업.
-                Log.i("msg1",adapterView.getCount()+"");
-                for(int j=0;j<adapterView.getCount();j++){
-                    LinearLayout ll=((LinearLayout)((ListView)view.getParent()).getChildAt(j));
-                    TextView tv=(TextView)ll.getChildAt(1);
-                    ImageView iv=(ImageView)ll.getChildAt(0);
-                    ll.setBackgroundColor(Color.WHITE);
-                    iv.setSelected(false);
-                    tv.setTextColor(getResources().getColor(R.color.c9));
-                }
-                ((LinearLayout)view).setBackgroundColor(getResources().getColor(R.color.c7));
-                ((TextView)((LinearLayout)view).getChildAt(1)).setTextColor(getResources().getColor(R.color.c5));
-                ((ImageView)((LinearLayout)view).getChildAt(0)).setSelected(true);
-                container.removeAllViews();
-                if(i==0)
-                    container.addView(new gathering_list(getApplication()));
-                else if(i==1)
-                    container.addView(new test_in(getApplication()));
-                else if(i==2)
-                    container.addView(new gathering_list(getApplication()));
-                else if(i==3)
-                    container.addView(new test_in(getApplication()));
+
+
+                clickmenu(i);
                 menuLeftSlideAnimationToggle();
 
             }
@@ -226,17 +208,49 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 			break;
 
 			case R.id.bt1:
-				Toast.makeText(getApplicationContext(), "실험1", Toast.LENGTH_SHORT)
-						.show();
+				clickmenu(0);
 				break;
 			case R.id.bt2:
-				Toast.makeText(getApplicationContext(), "실험2", Toast.LENGTH_SHORT)
-						.show();
+				clickmenu(1);
 				break;
 			case R.id.bt3:
-				Toast.makeText(getApplicationContext(), "실험3", Toast.LENGTH_SHORT)
-						.show();
+				clickmenu(2);
 				break;
+			case R.id.bt4:
+				clickmenu(3);
+				break;
+		}
+
+	}
+	public void clickmenu(int i){
+		container.removeAllViews();
+		for(int j=0;j<menu_list1.getChildCount();j++){
+			LinearLayout ll=(LinearLayout) menu_list1.getChildAt(j);
+			TextView tv=(TextView)ll.getChildAt(1);
+			ImageView iv=(ImageView)ll.getChildAt(0);
+			ll.setBackgroundColor(Color.WHITE);
+			iv.setSelected(false);
+			tv.setTextColor(getResources().getColor(R.color.c9));
+		}
+		((LinearLayout) menu_list1.getChildAt(i)).setBackgroundColor(getResources().getColor(R.color.c7));
+		((TextView)((LinearLayout) menu_list1.getChildAt(i)).getChildAt(1)).setTextColor(getResources().getColor(R.color.c5));
+		((ImageView)((LinearLayout) menu_list1.getChildAt(i)).getChildAt(0)).setSelected(true);
+		if(i==0) {
+			((Button) findViewById(R.id.bt1)).setTextColor(Color.WHITE);
+			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
+			container.addView(new gathering_list(getApplication()));
+		}else if(i==1) {
+			((Button) findViewById(R.id.bt2)).setTextColor(Color.WHITE);
+			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt2)).getX());
+			container.addView(new test_in(getApplication()));
+		}else if(i==2){
+			container.addView(new gathering_list(getApplication()));
+			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt3)).getX());
+		((Button) findViewById(R.id.bt3)).setTextColor(Color.WHITE);
+		}else if(i==3){
+			((Button) findViewById(R.id.bt4)).setTextColor(Color.WHITE);
+			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt4)).getX());
+			container.addView(new test_in(getApplication()));
 		}
 
 	}

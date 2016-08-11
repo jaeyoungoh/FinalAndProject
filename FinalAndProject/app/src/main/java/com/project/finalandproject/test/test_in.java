@@ -20,7 +20,7 @@ public class test_in extends LinearLayout {
     public void excute(Context context) {
         this.context = context;
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.main_page2, this, true);
+        inflater.inflate(R.layout.mem_join_page, this, true);
     }
 }
 

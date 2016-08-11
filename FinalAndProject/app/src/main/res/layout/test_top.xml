@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
     <Button
         android:id="@+id/bt1"
         android:background="@color/c8"
         android:layout_weight="1"
-        android:text="test1"
+        android:textStyle="bold"
+        android:text="홈"
         android:textColor="@color/c6"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
@@ -15,7 +20,8 @@
         android:id="@+id/bt2"
         android:background="@color/c8"
         android:layout_weight="1"
-        android:text="test2"
+        android:textStyle="bold"
+        android:text="그룹검색"
         android:textColor="@color/c6"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
@@ -23,9 +29,51 @@
         android:id="@+id/bt3"
         android:background="@color/c8"
         android:layout_weight="1"
-        android:text="test3"
+        android:textStyle="bold"
+        android:text="일정관리"
         android:textColor="@color/c6"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
-
-</LinearLayout>
+        <Button
+            android:id="@+id/bt4"
+            android:background="@color/c8"
+            android:layout_weight="1"
+            android:text="나의그룹"
+            android:textColor="@color/c6"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <View
+            android:layout_gravity="bottom"
+            android:background="#FFF"
+            android:layout_height="15px"
+            android:id="@+id/select"
+            android:textColor="@color/c6"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            />
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</FrameLayout>
