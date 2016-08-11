@@ -19,7 +19,14 @@
         <activity android:name=".test.TestTopView" />
         <activity android:name=".test.TestJava"></activity>
         <activity android:name=".member.Mem_Join_Success_page" />
-        <activity android:name=".member.Mem_Modify_Page" />
+        <activity android:name=".member.Mem_Modify_Page" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".member.Mem_Join_Page" />
         <activity android:name=".member.Mem_Category_Interest" />
         <activity android:name=".Main_Page">
@@ -33,11 +40,7 @@
             android:theme="@style/AppTheme.NoActionBar">
      </activity>
         <activity android:name=".Main_Page2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Main_page3"></activity>
 

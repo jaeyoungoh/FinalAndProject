@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.project.finalandproject.R;
 
@@ -242,7 +241,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		}else if(i==1) {
 			((Button) findViewById(R.id.bt2)).setTextColor(Color.WHITE);
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt2)).getX());
-			container.addView(new test_in(getApplication()));
+			container.addView(new Setting_page(getApplication()));
 		}else if(i==2){
 			container.addView(new gathering_list(getApplication()));
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt3)).getX());

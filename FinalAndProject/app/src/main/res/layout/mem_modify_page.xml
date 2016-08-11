@@ -2,154 +2,153 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/c6"
     android:orientation="vertical"
+    android:background="@color/c6"
     android:padding="30dp">
 
+
+
     <LinearLayout
+        android:background="@drawable/round"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="회원수정"
+            android:padding="10dp"
+            android:gravity="center"
             android:textColor="@color/c1"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="NAME"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+        <EditText
+            android:background="@drawable/round"
+            android:id="@+id/modify_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
     </LinearLayout>
 
     <LinearLayout
+        android:background="@drawable/round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        >
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:padding="10dp"
-            android:text="NAME"
+            android:gravity="center"
             android:textColor="@color/c1"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/modi_name_txt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2.5"
-            android:background="#fff" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
             android:text="ID"
-            android:textColor="@color/c1"
+            android:textStyle="bold"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            />
 
         <EditText
-            android:id="@+id/modi_id_txt"
+            android:background="@drawable/round"
+            android:id="@+id/modify_id_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.5"
-            android:background="#fff" />
+            android:layout_weight="2.5" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:background="@drawable/round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <TextView
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/c1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
             android:text="PWD"
-            android:textColor="@color/c1"
+            android:textStyle="bold"
             android:textSize="17.7dp"
-            android:textStyle="bold" />
+            />
 
         <EditText
-            android:id="@+id/modi_pass_txt"
+            android:background="@drawable/round"
+            android:inputType="textPassword"
+            android:id="@+id/modify_pass_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.5"
-            android:background="#fff"
-            android:inputType="textPassword" />
+            android:layout_weight="2.5" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:background="@drawable/round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <TextView
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/c1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
             android:text="E-Mail"
-            android:textColor="@color/c1"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/modi_email_txt"
+            android:background="@drawable/round"
+            android:id="@+id/modify_email_txt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.5"
-            android:background="#fff" />
+            android:layout_weight="2.5" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
+        android:orientation="horizontal"
+        android:gravity="top|center">
         <Button
-            android:id="@+id/modisubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="@drawable/round1"
             android:layout_margin="10px"
-            android:background="@color/c1"
-            android:onClick="SubmitJoin"
-            android:text="가입"
-            android:textColor="#fff" />
+            android:backgroundTint="@color/c3"
+            android:textColor="#fff"
+            android:id="@+id/modifysubmit"
+            android:onClick="SubmitModify"
+            android:text="수정"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <Button
+            android:background="@drawable/round1"
+            android:layout_margin="10px"
+            android:textColor="#FFF"
+            android:backgroundTint="@color/c3"
             android:id="@+id/cancle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10px"
-            android:background="@color/c1"
             android:onClick="Cancle"
             android:text="취소"
-            android:textColor="#FFF" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
 
 
     </LinearLayout>

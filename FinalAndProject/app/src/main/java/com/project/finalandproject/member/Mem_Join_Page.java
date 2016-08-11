@@ -27,7 +27,6 @@ import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 
 public class Mem_Join_Page extends Activity {
