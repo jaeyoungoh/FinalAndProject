@@ -16,17 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.finalandproject.R;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.project.finalandproject.conn.MemConn;
+import com.project.finalandproject.dto.MemberDTO;
 
 
 public class Mem_Join_Page extends Activity {
@@ -76,28 +67,22 @@ public class Mem_Join_Page extends Activity {
         member_pwd = edtTxt[2].getText().toString();
         member_email = edtTxt[3].getText().toString();
 
-
-        String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
-
-        HttpClient client = new DefaultHttpClient();
-        HttpPost post = new HttpPost(requestURL);
-        List<NameValuePair> paramList = new ArrayList<>();
-        paramList.add(new BasicNameValuePair("name", member_name));
-        paramList.add(new BasicNameValuePair("id", member_id));
-        paramList.add(new BasicNameValuePair("pwd", member_pwd));
-        paramList.add(new BasicNameValuePair("email", member_email));
-
+        MemberDTO dto = new MemberDTO();
+        dto.setName(member_name);
+        dto.setId(member_id);
+        dto.setPwd(member_pwd);
+        dto.setEmail(member_email);
 
         try {
-            post.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
-            HttpResponse response = client.execute(post);
+            MemConn.connServer("join", dto);
+
         } catch (Exception e) {
             Log.d("sendPost===> ", e.toString());
         }
 
         Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
-        intent = new Intent(getApplication(), Mem_Category_Interest.class);
-        startActivity(intent);
+//        intent = new Intent(getApplication(), Mem_Category_Interest.class);
+//        startActivity(intent);
     }
 
 
