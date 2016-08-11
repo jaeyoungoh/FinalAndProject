@@ -1,7 +1,9 @@
 package com.project.finalandproject.test;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.project.finalandproject.R;
@@ -20,7 +22,10 @@ public class test_in extends LinearLayout {
     public void excute(Context context) {
         this.context = context;
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         inflater.inflate(R.layout.mem_join_page, this, true);
     }
+
+
 }
 

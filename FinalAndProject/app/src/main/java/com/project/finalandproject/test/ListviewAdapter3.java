@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.project.finalandproject.R;
@@ -16,11 +15,11 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016-08-03.
  */
-public class ListviewAdapter extends BaseAdapter {
+public class ListviewAdapter3 extends BaseAdapter {
     private LayoutInflater inflater;
-    private ArrayList<Listviewitem> data;
+    private ArrayList<Listviewitem3> data;
     private int layout;
-    public ListviewAdapter(Context context, int layout, ArrayList<Listviewitem> data){
+    public ListviewAdapter3(Context context, int layout, ArrayList<Listviewitem3> data){
         this.inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data=data;
         this.layout=layout;
@@ -39,11 +38,15 @@ public class ListviewAdapter extends BaseAdapter {
         if(convertView==null){
             convertView=inflater.inflate(layout,parent,false);
         }
-        Listviewitem listviewitem=data.get(position);
+        Listviewitem3 listviewitem=data.get(position);
         ImageView icon=(ImageView)convertView.findViewById(R.id.imageview);
         icon.setImageResource(listviewitem.getIcon());
         TextView name=(TextView)convertView.findViewById(R.id.textview);
         name.setText(listviewitem.getName());
+        TextView num=(TextView)convertView.findViewById(R.id.GATHERING_NUM);
+        num.setText(listviewitem.getNum());
+        TextView information=(TextView)convertView.findViewById(R.id.GATHERING_INFORMATION);
+        information.setText(listviewitem.getInformation());
         return convertView;
     }
     public void setColor(){
