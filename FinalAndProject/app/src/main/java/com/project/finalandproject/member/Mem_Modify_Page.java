@@ -81,7 +81,7 @@ public class Mem_Modify_Page extends Activity {
         member_email = edtTxt[3].getText().toString();
 
 
-        String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
+        String requestURL = "http://192.168.14.31:8805/finalproject/update.do";
 
         HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestURL);
