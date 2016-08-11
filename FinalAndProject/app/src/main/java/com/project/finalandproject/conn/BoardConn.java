@@ -1,4 +1,4 @@
-﻿package com.project.finalandproject.conn;
+package com.project.finalandproject.conn;
 
 import android.os.StrictMode;
 import android.util.Log;

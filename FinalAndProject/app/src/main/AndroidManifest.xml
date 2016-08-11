@@ -11,16 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".gathering.Gathering_Search_Page">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
         <activity android:name=".test.Test_Menu_Activity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".test.category_list"></activity>
         <activity android:name=".test.ListviewActivity"></activity>
         <activity android:name=".test.TestTopView" />
         <activity android:name=".test.TestJava"></activity>
@@ -28,10 +26,6 @@
         <activity android:name=".member.Mem_Modify_Page" >
         </activity>
         <activity android:name=".member.Mem_Join_Page" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".member.Mem_Category_Interest" />
@@ -44,8 +38,8 @@
             android:theme="@style/AppTheme.NoActionBar">
      </activity>
         <activity android:name=".Main_Page2">
-
         </activity>
+        <activity android:name=".test.gathering_insert"/>
         <activity android:name=".Main_page3"></activity>
 
         <activity android:name=".test.Setting_page"></activity>

@@ -33,7 +33,7 @@
                 android:src="@drawable/mathematical_addition_sign"
                 android:background="@drawable/shape"
                 android:backgroundTint="@color/c8"
-
+                android:id="@+id/gathering_insert"
                 android:layout_weight="1"
                 />
         </LinearLayout>

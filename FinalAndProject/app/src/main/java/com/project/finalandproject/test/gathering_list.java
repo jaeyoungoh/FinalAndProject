@@ -1,8 +1,11 @@
 package com.project.finalandproject.test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -35,6 +38,15 @@ public class gathering_list extends LinearLayout {
         ArrayList<Listviewitem3> data;
         ListView listView;
         listView=(ListView)findViewById(R.id.listview);
+        final ImageButton gathering_insert=(ImageButton)findViewById(R.id.gathering_insert);
+        gathering_insert.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, gathering_insert.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
         data=new ArrayList<>();
         test1 =new Listviewitem3(R.drawable.samplewide1,"실전영어회화","1","1/20\n천안");
         test2 =new Listviewitem3(R.drawable.samplewide2,"<다이버후드>스킨스쿠버동호회","2","1/20\n부산");
