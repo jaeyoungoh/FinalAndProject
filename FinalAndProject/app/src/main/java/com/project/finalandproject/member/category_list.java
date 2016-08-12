@@ -13,11 +13,13 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.project.finalandproject.test.gathering_insert;
 import com.project.finalandproject.R;
 import com.project.finalandproject.dto.GatheringDTO;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.test.Test_Menu_Activity;
+
+import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2016-08-10.
@@ -30,6 +32,7 @@ public class category_list extends Activity{
     MemberDTO dto;
     GatheringDTO dto2;
     String type;
+    public static ArrayList<Activity> actList = new ArrayList<Activity>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +41,12 @@ public class category_list extends Activity{
         type=intent.getStringExtra("type");
         if(type.equals("mjoin")) {
             dto = (MemberDTO) intent.getSerializableExtra("dto");
+            actList.add(new Mem_Join_Page());
+            actList.add(this);
         }else{
             dto2=(GatheringDTO)intent.getSerializableExtra("dto");
+            actList.add(new gathering_insert());
+            actList.add(this);
         }
 
         LinearLayout container=(LinearLayout) findViewById(R.id.container);
@@ -51,18 +58,25 @@ public class category_list extends Activity{
             public void onClick(View view) {
                     intent=new Intent(getApplication(), Test_Menu_Activity.class);
                     if(dto!=null) {
+                        for(int i=0;i<actList.size();i++)
+                            actList.get(i).finish();
                         intent.putExtra("dto",dto);
                         intent.putExtra("type","mjoin");
                         Log.i("11dto",dto.toString());
                         //회원가입 DB연동
-
+                        startActivity(intent);
                     }else {
+                        for(int i=0;i<actList.size();i++)
+                            actList.get(i).finish();
                         intent.putExtra("dto",dto2);
                         intent.putExtra("type","gjoin");
                         Log.i("11dto",dto2.toString());
                         //그룹만들기 DB연동.
+                        startActivity(intent);
+                        finish();
+
                     }
-                    startActivity(intent);
+
             }
         });
         title.setText("카테고리선택");

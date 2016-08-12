@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,7 +17,7 @@ import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
-import com.project.finalandproject.member.Mem_Category_Interest;
+import com.project.finalandproject.member.category_list;
 
 import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
@@ -36,8 +37,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class Main_Page2 extends Activity {
 
     Intent intent;
-    Button Logbt;
-
+    Button Logbt, naver_logout, naver_out;
+    private static String TAG = "출력용";
 
 
     // 네이버 로그인 요소
@@ -53,6 +54,20 @@ public class Main_Page2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        naver_logout = (Button)findViewById(R.id.naver_logout);
+        naver_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOAuthLoginInstance.logout(mContext);
+            }
+        });
+        naver_out = (Button)findViewById(R.id.naver_out);
+        naver_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DeleteTokenTask().execute();
+            }
+        });
 
         Logbt = (Button) findViewById(R.id.Log);
         Logbt.setOnClickListener(new View.OnClickListener() {
@@ -171,7 +186,7 @@ public class Main_Page2 extends Activity {
                 Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
                 MemInfo.USER_ID = dto.getId();
                 MemInfo.USER_NAME = dto.getName();
-                intent = new Intent(getApplication(), Mem_Category_Interest.class);
+                intent = new Intent(getApplication(), category_list.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "가입실패", Toast.LENGTH_LONG).show();
@@ -181,5 +196,22 @@ public class Main_Page2 extends Activity {
         }
 
     }
+
+    private class DeleteTokenTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            boolean isSuccessDeleteToken = mOAuthLoginInstance.logoutAndDeleteToken(mContext);
+
+            if (!isSuccessDeleteToken) {
+                // 서버에서 token 삭제에 실패했어도 클라이언트에 있는 token 은 삭제되어 로그아웃된 상태이다
+                // 실패했어도 클라이언트 상에 token 정보가 없기 때문에 추가적으로 해줄 수 있는 것은 없음
+                Log.d(TAG, "errorCode:" + mOAuthLoginInstance.getLastErrorCode(mContext));
+                Log.d(TAG, "errorDesc:" + mOAuthLoginInstance.getLastErrorDesc(mContext));
+            }
+
+            return null;
+        }
+    }
+
 
 }
