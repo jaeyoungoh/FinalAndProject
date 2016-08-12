@@ -16,7 +16,7 @@ import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
-import com.project.finalandproject.member.Mem_Category_Interest;
+import com.project.finalandproject.member.category_list;
 
 import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
@@ -171,7 +171,7 @@ public class Main_Page2 extends Activity {
                 Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
                 MemInfo.USER_ID = dto.getId();
                 MemInfo.USER_NAME = dto.getName();
-                intent = new Intent(getApplication(), Mem_Category_Interest.class);
+                intent = new Intent(getApplication(), category_list.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "가입실패", Toast.LENGTH_LONG).show();
