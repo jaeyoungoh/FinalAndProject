@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".test.category_list"></activity>
+        <activity android:name=".member.category_list"></activity>
         <activity android:name=".test.ListviewActivity"></activity>
         <activity android:name=".test.TestTopView" />
         <activity android:name=".test.TestJava"></activity>
@@ -28,8 +28,8 @@
         <activity android:name=".member.Mem_Join_Page" >
         </activity>
 
-        <activity android:name=".member.Mem_Category_Interest" />
-        <activity android:name=".Main_Page">
+        <activity android:name=".test.Mem_Category_Interest" />
+        <activity android:name=".test.Main_Page">
         </activity>
         <activity android:name=".test.TestCalender"></activity>
         <activity

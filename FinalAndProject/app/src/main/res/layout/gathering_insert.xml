@@ -27,6 +27,7 @@
                 android:layout_margin="10dp"
                 >
                 <TextView
+                    android:id="@+id/GATHERING_LOCATION_ICON"
                     android:paddingLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="2"
@@ -45,14 +46,53 @@
                     android:id="@+id/GATHERING_LOCATION"
                     android:paddingRight="20dp"
                     android:gravity="right|center"
-                    android:hint="서울특별시"
+                    android:hint="지역"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
                     />
 
             </LinearLayout>
-
+            <LinearLayout
+                android:background="@drawable/round1"
+                android:backgroundTint="@color/c7"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="성별"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent" />
+                <RadioGroup
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="여자" />
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="남자" />
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="무관" />
+                </RadioGroup>
+                </LinearLayout>
             <LinearLayout
                 android:background="@drawable/round1"
                 android:backgroundTint="@color/c7"
@@ -96,7 +136,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="4">
+                    android:layout_weight="3">
 
                     <EditText
                         android:textCursorDrawable="@drawable/cursor"
@@ -108,7 +148,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/round"
                         android:layout_height="match_parent"
-                        android:layout_weight="2.5"
+                        android:layout_weight="2"
                         android:inputType="text"/>
                 </LinearLayout>
             </LinearLayout>
@@ -208,6 +248,7 @@
 
 
         </LinearLayout>
+
     </LinearLayout>
 
 

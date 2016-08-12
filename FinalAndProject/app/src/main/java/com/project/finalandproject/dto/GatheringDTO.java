@@ -1,6 +1,8 @@
 package com.project.finalandproject.dto;
 
-public class GatheringDTO {
+import java.io.Serializable;
+
+public class GatheringDTO implements Serializable {
 	private int gathering_num;
 	private String gathering_title;
 	private String gathering_content;

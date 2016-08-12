@@ -1,6 +1,8 @@
 package com.project.finalandproject.dto;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable{
 	
 	private String id; // 아이디
 	private String pwd; // 비번
