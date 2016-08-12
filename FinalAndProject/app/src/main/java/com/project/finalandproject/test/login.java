@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.nhn.android.naverlogin.OAuthLogin;
 import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
-import com.project.finalandproject.Main_Page;
 import com.project.finalandproject.R;
 
 import org.apache.http.HttpResponse;

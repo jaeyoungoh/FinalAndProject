@@ -1,4 +1,4 @@
-package com.project.finalandproject;
+package com.project.finalandproject.test;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,13 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.project.finalandproject.R;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
-import com.project.finalandproject.member.MemInfo;
 import com.project.finalandproject.member.Mem_Join_Page;
-import com.project.finalandproject.test.Test_Menu_Activity;
-
-import org.json.simple.JSONObject;
 
 /**
  * Created by Administrator on 2016-08-02.
@@ -46,24 +43,16 @@ public class Main_Page extends Activity {
         startActivity(intent);
     }
 
-    public void Login(View v) {
+    public void Login(View v){
 
-        Log.d("로그인", "버튼누름");
+        Log.d("로그인","버튼누름");
         MemberDTO m = new MemberDTO();
         m.setId(member_id.getText().toString());
         m.setPwd(member_pwd.getText().toString());
 
-        try {
-            if (((JSONObject) MemConn.getJSONDatas("login", m)).get("msg").toString().equals("Success")) {
-                Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
-                MemInfo.USER_ID = m.getId();
-                MemInfo.USER_NAME = m.getName();
-                Intent intent = new Intent(getApplication(), Test_Menu_Activity.class);
-                startActivity(intent);
-            } else
-                Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
+        if(MemConn.connServer("login", m)){
+            Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+        } else
             Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
-        }
     }
 }
