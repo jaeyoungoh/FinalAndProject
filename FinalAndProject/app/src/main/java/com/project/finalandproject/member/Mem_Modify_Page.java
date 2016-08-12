@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.project.finalandproject.Main_Page2;
 import com.project.finalandproject.R;
+import com.project.finalandproject.conn.MemConn;
+import com.project.finalandproject.dto.MemberDTO;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -25,6 +27,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +43,7 @@ public class Mem_Modify_Page extends Activity {
     Button cancle, modifysubmit;
     int texts[] = {R.id.modify_name_txt, R.id.modify_id_txt, R.id.modify_pass_txt, R.id.modify_email_txt};
     EditText edtTxt[] = new EditText[texts.length];
-
+    MemberDTO mDto=null;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +69,17 @@ public class Mem_Modify_Page extends Activity {
         for (int i = 0; i < texts.length; i++) {
             edtTxt[i] = (EditText) findViewById(texts[i]);
         }
-
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+        mDto = new MemberDTO();
+        JSONObject jObject = (JSONObject) MemConn.getJSONDatas("info", mDto);
+
+        edtTxt[0].setText(jObject.get("name").toString());
+        edtTxt[1].setText(jObject.get("id").toString());
+        edtTxt[2].setText(jObject.get("pwd").toString());
+        edtTxt[3].setText(jObject.get("email").toString());
+
 
     }
 
