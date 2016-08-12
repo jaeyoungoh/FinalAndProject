@@ -81,7 +81,8 @@ public class Mem_Join_Page extends Activity {
 
             if (Jobj.get("msg").toString().equals("Success")) {
                 Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
-
+                MemInfo.USER_ID = dto.getId();
+                MemInfo.USER_NAME = dto.getName();
                 intent = new Intent(getApplication(), Mem_Category_Interest.class);
                 startActivity(intent);
             } else {
