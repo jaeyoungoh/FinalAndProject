@@ -18,10 +18,6 @@ import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
 import com.project.finalandproject.member.Mem_Category_Interest;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -29,8 +25,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -95,13 +89,9 @@ public class Main_Page2 extends Activity {
     private OAuthLoginHandler mOAuthLoginHandler = new OAuthLoginHandler() {
         @Override
         public void run(boolean success) {
-            if (success) {
-                String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
-                HttpClient client = new DefaultHttpClient();
-                HttpPost post = new HttpPost(requestURL);
-                List<NameValuePair> paramList = new ArrayList<>();
+            if (success) { // 사용자가 네이버에서 로그인 성공
                 new RequestApiTask().execute(); // xml 받아옴
-            } else {
+            } else { // 사용자가 네이버에서 로그인 실패
                 String errorCode = mOAuthLoginInstance.getLastErrorCode(mContext).getCode();
                 String errorDesc = mOAuthLoginInstance.getLastErrorDesc(mContext);
                 Toast.makeText(mContext, "errorCode:" + errorCode + ", errorDesc:" + errorDesc, Toast.LENGTH_SHORT).show();
