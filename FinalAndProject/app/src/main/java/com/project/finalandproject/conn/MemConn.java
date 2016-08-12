@@ -28,24 +28,24 @@ import java.util.List;
  * Created by Administrator on 2016-08-11.
  */
 public class MemConn {
-    static private String requestURL=null;
+    static private String requestURL="http://192.168.14.31:8805/finalproject/";
     static private List<NameValuePair> setParamList(String type, Object obj){
         List<NameValuePair> paramList = new ArrayList<>();
 
         if(type.equals("login")){
-            requestURL = "http://192.168.14.31:8805/finalproject/login.do";
+            requestURL += "login.do";
             paramList.add(new BasicNameValuePair("id", ((MemberDTO) obj).getId()));
             paramList.add(new BasicNameValuePair("pwd", ((MemberDTO) obj).getPwd()));
 
         } else if(type.equals("join")){
-            requestURL = "http://192.168.14.31:8805/finalproject/join.do";
+            requestURL += "join.do";
             paramList.add(new BasicNameValuePair("name", ((MemberDTO) obj).getName()));
             paramList.add(new BasicNameValuePair("id", ((MemberDTO) obj).getId()));
             paramList.add(new BasicNameValuePair("pwd", ((MemberDTO) obj).getPwd()));
             paramList.add(new BasicNameValuePair("email", ((MemberDTO) obj).getEmail()));
 
         } else if(type.equals("makeProfile")){
-            requestURL = "http://192.168.14.31:8805/finalproject/makeprofile.do";
+            requestURL += "makeprofile.do";
             paramList.add(new BasicNameValuePair("id", MemInfo.USER_ID));
             paramList.add(new BasicNameValuePair("interest", ((MemberDTO) obj).getInterest()));
             paramList.add(new BasicNameValuePair("location", ((MemberDTO) obj).getLocation()));
@@ -53,7 +53,11 @@ public class MemConn {
             paramList.add(new BasicNameValuePair("address", ((MemberDTO) obj).getAddress()));
             paramList.add(new BasicNameValuePair("sex", ((MemberDTO) obj).getSex()));
             paramList.add(new BasicNameValuePair("phone", ((MemberDTO) obj).getPhone()));
+        } else if (type.equals("info")){
+            requestURL = "makeprofile.do";
+            paramList.add(new BasicNameValuePair("id", MemInfo.USER_ID));
         }
+
         return paramList;
     }
 
@@ -81,11 +85,11 @@ public class MemConn {
             }
 
             //로그인과 회원가입시 JSONOBJECT 파싱
-            if(type.equals("join")||type.equals("login")){
+            if(type.equals("join")||type.equals("login")||type.equals("info")){
                 JSONParser parser =  new JSONParser();
                 JSONObj = (JSONObject)parser.parse(sb.toString());
                 Log.i("============>>>>>>>","JSON 넘어온 값"+sb.toString());
-            }else if(type.equals("info")){
+            }else if(type.equals("update")){
 
             }
 
