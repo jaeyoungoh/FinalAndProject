@@ -13,14 +13,16 @@ import android.widget.Toast;
 import com.nhn.android.naverlogin.OAuthLogin;
 import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
+import com.project.finalandproject.conn.MemConn;
+import com.project.finalandproject.dto.MemberDTO;
+import com.project.finalandproject.member.MemInfo;
+import com.project.finalandproject.member.Mem_Category_Interest;
 
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -151,23 +153,42 @@ public class Main_Page2 extends Activity {
     }
 
     private void SubmitJoin(String member_name,String member_id, String member_pwd, String member_email) { //조인 부분
-        String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
-        HttpClient client = new DefaultHttpClient();
-        HttpPost post = new HttpPost(requestURL);
-        List<NameValuePair> paramList = new ArrayList<>();
-        paramList.add(new BasicNameValuePair("name", member_name));
-        paramList.add(new BasicNameValuePair("id", member_id));
-        paramList.add(new BasicNameValuePair("pwd", member_pwd));
-        paramList.add(new BasicNameValuePair("email", member_email));
+//        String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
+//        HttpClient client = new DefaultHttpClient();
+//        HttpPost post = new HttpPost(requestURL);
+//        List<NameValuePair> paramList = new ArrayList<>();
+//        paramList.add(new BasicNameValuePair("name", member_name));
+//        paramList.add(new BasicNameValuePair("id", member_id));
+//        paramList.add(new BasicNameValuePair("pwd", member_pwd));
+//        paramList.add(new BasicNameValuePair("email", member_email));
+//
+//        try {
+//            post.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
+//            HttpResponse response = client.execute(post);
+//        } catch (Exception e) {
+//        }
+        MemberDTO dto = new MemberDTO();
+        dto.setName(member_name);
+        dto.setId(member_id);
+        dto.setPwd(member_pwd);
+        dto.setEmail(member_email);
 
 
+        JSONObject Jobj =null;
         try {
-            post.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
-            HttpResponse response = client.execute(post);
-        } catch (Exception e) {
+            Jobj = (JSONObject) MemConn.getJSONDatas("join", dto);
+            if (Jobj.get("msg").toString().equals("Success")) {
+                Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
+                MemInfo.USER_ID = dto.getId();
+                MemInfo.USER_NAME = dto.getName();
+                intent = new Intent(getApplication(), Mem_Category_Interest.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "가입실패", Toast.LENGTH_LONG).show();
+            }
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), "가입실패", Toast.LENGTH_LONG).show();
         }
-
-        Toast.makeText(getApplicationContext(),"가입완료",Toast.LENGTH_LONG).show();
 
     }
 
