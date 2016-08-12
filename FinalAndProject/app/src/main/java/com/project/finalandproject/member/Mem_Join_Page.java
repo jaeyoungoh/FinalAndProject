@@ -77,8 +77,7 @@ public class Mem_Join_Page extends Activity {
 
         JSONObject Jobj =null;
         try {
-            Jobj = MemConn.getJSONDatas("join", dto);
-
+            Jobj = (JSONObject)MemConn.getJSONDatas("join", dto);
             if (Jobj.get("msg").toString().equals("Success")) {
                 Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
                 MemInfo.USER_ID = dto.getId();

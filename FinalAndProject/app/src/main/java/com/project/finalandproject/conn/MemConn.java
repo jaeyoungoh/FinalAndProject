@@ -57,7 +57,7 @@ public class MemConn {
         return paramList;
     }
 
-    public static JSONObject getJSONDatas(String type, Object obj){
+    public static Object getJSONDatas(String type, Object obj){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         InputStream is=null;
         StrictMode.setThreadPolicy(policy);
@@ -79,9 +79,15 @@ public class MemConn {
             while((line = rd.readLine()) != null) {
                 sb.append(line);
             }
-            JSONParser parser =  new JSONParser();
-            JSONObj = (JSONObject)parser.parse(sb.toString());
-            Log.i("============>>>>>>>","JSON 넘어온 값"+sb.toString());
+
+            //로그인과 회원가입시 JSONOBJECT 파싱
+            if(type.equals("join")||type.equals("login")){
+                JSONParser parser =  new JSONParser();
+                JSONObj = (JSONObject)parser.parse(sb.toString());
+                Log.i("============>>>>>>>","JSON 넘어온 값"+sb.toString());
+            }else if(type.equals("info")){
+
+            }
 
         } catch (Exception e) {
             Log.d("sendPost===> ", e.toString());
