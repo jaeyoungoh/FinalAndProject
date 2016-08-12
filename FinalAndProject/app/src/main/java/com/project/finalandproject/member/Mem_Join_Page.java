@@ -78,7 +78,7 @@ public class Mem_Join_Page extends Activity {
             Log.d("sendPost===> ", e.toString());
         }*/
 
-        Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
+/*        Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();*/
         intent = new Intent(getApplication(),category_list.class);
         intent.putExtra("dto",dto);
         intent.putExtra("type","mjoin");

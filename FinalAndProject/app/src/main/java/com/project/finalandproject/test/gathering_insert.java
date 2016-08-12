@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -56,7 +57,6 @@ public class gathering_insert extends Activity{
                 ((TextView)findViewById(R.id.GATHERING_LOCATION)).setText(msg[index]);
             }
         });
-
 
         LayoutInflater inflater=(LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.gathering_insert, container,true);
