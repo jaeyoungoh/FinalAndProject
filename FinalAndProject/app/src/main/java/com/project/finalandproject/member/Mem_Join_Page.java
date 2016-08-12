@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +17,8 @@ import android.widget.Toast;
 import com.project.finalandproject.R;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
+
+import org.json.simple.JSONObject;
 
 
 public class Mem_Join_Page extends Activity {
@@ -73,16 +74,22 @@ public class Mem_Join_Page extends Activity {
         dto.setPwd(member_pwd);
         dto.setEmail(member_email);
 
+
+        JSONObject Jobj =null;
         try {
-            MemConn.connServer("join", dto);
+            Jobj = MemConn.getJSONDatas("join", dto);
 
-        } catch (Exception e) {
-            Log.d("sendPost===> ", e.toString());
+            if (Jobj.get("msg").toString().equals("Success")) {
+                Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
+
+                intent = new Intent(getApplication(), Mem_Category_Interest.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "가입실패", Toast.LENGTH_LONG).show();
+            }
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), "가입실패", Toast.LENGTH_LONG).show();
         }
-
-        Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
-//        intent = new Intent(getApplication(), Mem_Category_Interest.class);
-//        startActivity(intent);
     }
 
 

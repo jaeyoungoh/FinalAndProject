@@ -29,8 +29,7 @@ import java.util.List;
  */
 public class MemConn {
     static private String requestURL=null;
-
-    static private List<NameValuePair> connController(String type, Object obj){
+    static private List<NameValuePair> setParamList(String type, Object obj){
         List<NameValuePair> paramList = new ArrayList<>();
 
         if(type.equals("login")){
@@ -46,6 +45,7 @@ public class MemConn {
             paramList.add(new BasicNameValuePair("email", ((MemberDTO) obj).getEmail()));
 
         } else if(type.equals("makeProfile")){
+            requestURL = "http://192.168.14.31:8805/finalproject/makeprofile.do";
             paramList.add(new BasicNameValuePair("id", MemInfo.USER_ID));
             paramList.add(new BasicNameValuePair("interest", ((MemberDTO) obj).getInterest()));
             paramList.add(new BasicNameValuePair("location", ((MemberDTO) obj).getLocation()));
@@ -57,13 +57,13 @@ public class MemConn {
         return paramList;
     }
 
-    public static boolean connServer(String type, Object obj){
-
+    public static JSONObject getJSONDatas(String type, Object obj){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         InputStream is=null;
         StrictMode.setThreadPolicy(policy);
-        List<NameValuePair> paramList = connController(type, obj);
+        List<NameValuePair> paramList = setParamList(type, obj);
         BufferedReader rd = null;
+        JSONObject JSONObj =null;
 
         try {
             HttpClient client = new DefaultHttpClient();
@@ -74,14 +74,14 @@ public class MemConn {
             is = entity.getContent();
 
             StringBuffer sb = new StringBuffer();
-            rd = new BufferedReader(new InputStreamReader(is));
             String line = null;
-
-
+            rd = new BufferedReader(new InputStreamReader(is));
+            while((line = rd.readLine()) != null) {
+                sb.append(line);
+            }
             JSONParser parser =  new JSONParser();
-            JSONObject JSONobj = (JSONObject)parser.parse(sb.toString());
+            JSONObj = (JSONObject)parser.parse(sb.toString());
             Log.i("============>>>>>>>","JSON 넘어온 값"+sb.toString());
-            Log.i("============>>>>>>>","JSON 넘어온 값"+JSONobj.get("msg").toString());
 
         } catch (Exception e) {
             Log.d("sendPost===> ", e.toString());
@@ -98,6 +98,6 @@ public class MemConn {
             }
 
         }
-        return false;
+        return JSONObj;
     }
 }
