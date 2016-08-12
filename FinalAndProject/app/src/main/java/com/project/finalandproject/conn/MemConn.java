@@ -43,6 +43,7 @@ public class MemConn {
             paramList.add(new BasicNameValuePair("id", ((MemberDTO) obj).getId()));
             paramList.add(new BasicNameValuePair("pwd", ((MemberDTO) obj).getPwd()));
             paramList.add(new BasicNameValuePair("email", ((MemberDTO) obj).getEmail()));
+            paramList.add(new BasicNameValuePair("interest", ((MemberDTO) obj).getEmail()));
 
         } else if(type.equals("makeProfile")){
             requestURL.append("makeprofile.do");
