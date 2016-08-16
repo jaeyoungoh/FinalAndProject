@@ -72,13 +72,19 @@ public class Mem_Modify_Page extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        mDto = new MemberDTO();
-        JSONObject jObject = (JSONObject) MemConn.getJSONDatas("info", mDto);
+        JSONObject jObject = (JSONObject) MemConn.getJSONDatas("info", null);
+        Log.i("result", jObject.toString());
 
-        edtTxt[0].setText(jObject.get("name").toString());
-        edtTxt[1].setText(jObject.get("id").toString());
-        edtTxt[2].setText(jObject.get("pwd").toString());
-        edtTxt[3].setText(jObject.get("email").toString());
+        mDto = new MemberDTO();
+        mDto.setId(jObject.get("id").toString());
+        mDto.setPwd(jObject.get("pwd").toString());
+        mDto.setName(jObject.get("name").toString());
+        mDto.setEmail(jObject.get("email").toString());
+        Toast.makeText(getApplicationContext(), "파싱된 JSON data : "+jObject.toString(),Toast.LENGTH_LONG).show();
+        edtTxt[0].setText(mDto.getName());
+        edtTxt[1].setText(mDto.getId());
+        edtTxt[2].setText(mDto.getPwd());
+        edtTxt[3].setText(mDto.getEmail());
 
 
     }
