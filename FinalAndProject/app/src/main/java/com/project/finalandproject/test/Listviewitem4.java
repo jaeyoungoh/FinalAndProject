@@ -17,6 +17,7 @@ public class Listviewitem4 {
     public int getIcon(){return icon;}
     public String getMessage(){return message;}
     public String getNum(){return num;}
+    public int getType(){return type;}
     public Listviewitem4(int icon, String message, String num, Date date,String id,int type){
         this.icon=icon;
         this.message=message;
