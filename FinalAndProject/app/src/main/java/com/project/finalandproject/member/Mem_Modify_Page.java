@@ -49,7 +49,7 @@ public class Mem_Modify_Page extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.top_menu_layout);
-        LinearLayout container=(LinearLayout) findViewById(R.id.container);
+        LinearLayout container=(LinearLayout) findViewById(R.id.inter);
         TextView title=(TextView) findViewById(R.id.title);
         TextView next=(TextView) findViewById(R.id.next);
         next.setText("수정");

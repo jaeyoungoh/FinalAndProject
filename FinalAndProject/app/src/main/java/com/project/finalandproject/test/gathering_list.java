@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.member.category_list;
 
 import java.util.ArrayList;
 
@@ -45,6 +47,18 @@ public class gathering_list extends LinearLayout {
                 Intent intent = new Intent(context, gathering_insert.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(context, gathering_view.class);
+                intent.putExtra("num",(String)adapterView.getAdapter().getItem(2));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+               context.startActivity(intent);
+                //선택한 아이템의 num 전송.
+
+
             }
         });
         data=new ArrayList<>();

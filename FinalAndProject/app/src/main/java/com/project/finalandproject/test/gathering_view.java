@@ -5,20 +5,16 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +25,7 @@ import com.project.finalandproject.member.category_list;
 /**
  * Created by Administrator on 2016-08-10.
  */
-public class gathering_insert extends Activity{
+public class gathering_view extends Activity{
     AlertDialog.Builder ad;
     String msg[];
     @Override
@@ -40,7 +36,7 @@ public class gathering_insert extends Activity{
         TextView title=(TextView) findViewById(R.id.title);
         TextView next=(TextView) findViewById(R.id.next);
         next.setText("");
-        title.setText("그룹생성");
+        title.setText("");
         ImageButton back=(ImageButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

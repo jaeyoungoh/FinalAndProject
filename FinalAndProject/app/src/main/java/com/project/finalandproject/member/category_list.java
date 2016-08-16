@@ -48,7 +48,7 @@ public class category_list extends Activity{
             dto2=(GatheringDTO)intent.getSerializableExtra("dto");
         }
 
-        LinearLayout container=(LinearLayout) findViewById(R.id.container);
+        LinearLayout container=(LinearLayout) findViewById(R.id.inter);
         TextView title=(TextView) findViewById(R.id.title);
         next=(TextView) findViewById(R.id.next);
         next.setText("건너뛰기");
