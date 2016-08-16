@@ -24,9 +24,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.member.MemInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Test_Menu_Activity extends Activity implements OnClickListener {
 
@@ -38,6 +38,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	private int leftMenuWidth;
 	private static boolean isLeftExpanded;
 	private Button btn1, btn2, btn3, btn4;
+	TextView whoid;
 	private ImageButton  bt_left;
 	ArrayList<Listviewitem> data2;
 
@@ -48,6 +49,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_menu_main);
 		LinearLayout inter = (LinearLayout) findViewById(R.id.inter);
+		whoid = (TextView)findViewById(R.id.whoid);
 
 
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -66,7 +68,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.bt4)).setOnClickListener(this);
 
 		initSildeMenu();
-		container.addView(new gathering_list(getApplication()));
+		container.addView(new gathering_list_test2(getApplication()));
 		((Button) findViewById(R.id.bt1)).setTextColor(Color.WHITE);
 		((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
 		//리스트뷰 아이템추가
@@ -219,6 +221,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 			case R.id.bt_left:
 				menuLeftSlideAnimationToggle();
+                whoid.setText(MemInfo.USER_ID);
 				break;
 
 			case R.id.bt1:
@@ -257,13 +260,13 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		if(i==0) {
 			((Button) findViewById(R.id.bt1)).setTextColor(Color.WHITE);
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
-			container.addView(new gathering_list(getApplication()));
+			container.addView(new gathering_list_test2(getApplication()));
 		}else if(i==1) {
 			((Button) findViewById(R.id.bt2)).setTextColor(Color.WHITE);
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt2)).getX());
 			/*container.addView(new Setting_page(getApplication()));*/
 		}else if(i==2){
-			container.addView(new gathering_list(getApplication()));
+			container.addView(new gathering_list_test2(getApplication()));
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt3)).getX());
 			((Button) findViewById(R.id.bt3)).setTextColor(Color.WHITE);
 		}else if(i==3){
