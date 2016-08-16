@@ -24,7 +24,7 @@
             <LinearLayout
                 android:background="@drawable/round1"
                 android:backgroundTint="@color/c7"
-                android:layout_width="400px"
+                android:layout_width="match_parent"
                 android:layout_height="400px"
                 android:orientation="horizontal"
                 android:gravity="center"
