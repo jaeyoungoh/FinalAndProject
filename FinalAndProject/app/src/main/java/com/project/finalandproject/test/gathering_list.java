@@ -11,7 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.project.finalandproject.R;
-import com.project.finalandproject.member.category_list;
+import com.project.finalandproject.conn.GatheringConn;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 
@@ -36,7 +39,8 @@ public class gathering_list extends LinearLayout {
     }
 
     private void itemInsert(){
-        Listviewitem3 test1,test3,test2,test4;
+//        Listviewitem3 test1,test3,test2,test4;
+        Listviewitem3 test;
         ArrayList<Listviewitem3> data;
         ListView listView;
         listView=(ListView)findViewById(R.id.listview);
@@ -55,21 +59,22 @@ public class gathering_list extends LinearLayout {
                 Intent intent = new Intent(context, gathering_view.class);
                 intent.putExtra("num",(String)adapterView.getAdapter().getItem(2));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-               context.startActivity(intent);
+                context.startActivity(intent);
                 //선택한 아이템의 num 전송.
 
 
             }
         });
+        JSONObject obj  = new JSONObject();
+        JSONArray jArr = (JSONArray) GatheringConn.getJSONDatas("list", null);
         data=new ArrayList<>();
-        test1 =new Listviewitem3(R.drawable.samplewide1,"실전영어회화","1","1/20\n천안");
-        test2 =new Listviewitem3(R.drawable.samplewide2,"<다이버후드>스킨스쿠버동호회","2","1/20\n부산");
-        test3 =new Listviewitem3(R.drawable.samplewide3,"WFM전세계친구만들기","3","1/20\n전국");
-        test4 =new Listviewitem3(R.drawable.samplebg,"서울 자기개발","4","1/20\n서울");
-        data.add(test1);
-        data.add(test2);
-        data.add(test3);
-        data.add(test4);
+//        Log.i("result","jArr의 내용 : "+jArr.toString());
+//        Log.i("result","jArr의 싸이즈 : "+jArr.size());
+        for(int i=0;i<jArr.size();i++){
+            obj = (JSONObject)jArr.get(i);
+            test =new Listviewitem3(R.drawable.samplewide1,obj.get("Gathering_title").toString(),obj.get("Gathering_num").toString(),"1/"+obj.get("Gathering_max_cnt").toString()+"\n"+obj.get("Gathering_location").toString());
+            data.add(test);
+        }
         this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         ListviewAdapter3 adapter =new ListviewAdapter3(getContext(),R.layout.item,data);
         listView.setAdapter(adapter);

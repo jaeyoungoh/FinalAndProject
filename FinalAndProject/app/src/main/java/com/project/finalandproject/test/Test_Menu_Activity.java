@@ -68,7 +68,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.bt4)).setOnClickListener(this);
 
 		initSildeMenu();
-		container.addView(new gathering_list_test2(getApplication()));
+		container.addView(new gathering_list(getApplication()));
 		((Button) findViewById(R.id.bt1)).setTextColor(Color.WHITE);
 		((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
 		//리스트뷰 아이템추가
@@ -260,13 +260,13 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		if(i==0) {
 			((Button) findViewById(R.id.bt1)).setTextColor(Color.WHITE);
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
-			container.addView(new gathering_list_test2(getApplication()));
+			container.addView(new gathering_list(getApplication()));
 		}else if(i==1) {
 			((Button) findViewById(R.id.bt2)).setTextColor(Color.WHITE);
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt2)).getX());
 			/*container.addView(new Setting_page(getApplication()));*/
 		}else if(i==2){
-			container.addView(new gathering_list_test2(getApplication()));
+			container.addView(new gathering_list(getApplication()));
 			((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt3)).getX());
 			((Button) findViewById(R.id.bt3)).setTextColor(Color.WHITE);
 		}else if(i==3){

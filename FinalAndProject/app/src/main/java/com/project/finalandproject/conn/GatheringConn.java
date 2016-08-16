@@ -56,6 +56,7 @@ public class GatheringConn {
         BufferedReader rd = null;
         JSONObject JSONObj =null;
         JSONArray jArr =null;
+        boolean flag = false;
 
         try {
             HttpClient client = new DefaultHttpClient();
@@ -75,12 +76,13 @@ public class GatheringConn {
             }
             Log.i("result","JSON 넘어온 값"+sb.toString());
             JSONParser parser =  new JSONParser();
-                try{
-                    jArr = (JSONArray)parser.parse(sb.toString());
-                    JSONObj.put("jArr",jArr);
-                }catch(Exception e){
+            try{
+                jArr = (JSONArray)parser.parse(sb.toString());
+                flag =true;
+            }catch(Exception e){
                     JSONObj = (JSONObject) parser.parse(sb.toString());
-                }
+                    flag=false;
+            }
 
         } catch (Exception e) {
             Log.d("sendPost===> ", e.toString());
@@ -97,6 +99,11 @@ public class GatheringConn {
             }
 
         }
-        return JSONObj;
+        // 넘어 오는 값이 JSONArray일 경우 flag는 true.
+        if(flag){
+            return jArr;
+        }else{
+            return JSONObj;
+        }
     }
 }
