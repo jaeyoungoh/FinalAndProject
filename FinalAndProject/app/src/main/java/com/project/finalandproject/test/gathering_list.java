@@ -56,7 +56,7 @@ public class gathering_list extends LinearLayout {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(context, gathering_view.class);
+                Intent intent = new Intent(context, Test_Menu_Activity2.class);
                 intent.putExtra("num",(String)adapterView.getAdapter().getItem(2));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);

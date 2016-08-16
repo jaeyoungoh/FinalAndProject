@@ -9,44 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="30dp">
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="8"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
+        android:padding="20dp">
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-            <TextView
-                android:paddingLeft="20dp"
-                android:textSize="20dp"
-                android:background="@drawable/round2"
-                android:layout_margin="10px"
-                android:backgroundTint="@color/c2"
-                android:textColor="@color/c3"
-                android:text="생성"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-            </LinearLayout>
-            <TextView
-                android:paddingLeft="20dp"
-                android:textSize="20dp"
-                android:background="@drawable/round2"
-                android:layout_margin="10px"
-                android:backgroundTint="@color/c8"
-                android:textColor="@color/c3"
-                android:text="생성"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_weight="8"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                    <ListView
+                        android:id="@+id/listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="#000"
+                        android:dividerHeight="1px">
+
+                    </ListView>
 
 
         </LinearLayout>
@@ -74,9 +54,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <ImageButton
-                android:scaleType="fitStart"
+                android:scaleType="fitCenter"
                 android:layout_gravity="right|center"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/shape"
                 android:src="@drawable/paper_plane"

@@ -9,7 +9,7 @@
         android:orientation="horizontal">
     <Button
         android:id="@+id/bt1"
-        android:background="@color/c6"
+        android:background="@color/c12"
         android:layout_weight="1"
         android:textStyle="bold"
         android:text="정보"
@@ -18,7 +18,7 @@
         android:layout_height="match_parent" />
     <Button
         android:id="@+id/bt2"
-        android:background="@color/c6"
+        android:background="@color/c12"
         android:layout_weight="1"
         android:textStyle="bold"
         android:text="만남"
@@ -27,7 +27,7 @@
         android:layout_height="match_parent" />
     <Button
         android:id="@+id/bt3"
-        android:background="@color/c6"
+        android:background="@color/c12"
         android:layout_weight="1"
         android:textStyle="bold"
         android:text="게시판"
@@ -36,7 +36,7 @@
         android:layout_height="match_parent" />
         <Button
             android:id="@+id/bt4"
-            android:background="@color/c6"
+            android:background="@color/c12"
             android:layout_weight="1"
             android:text="채팅"
             android:textColor="@color/c1"

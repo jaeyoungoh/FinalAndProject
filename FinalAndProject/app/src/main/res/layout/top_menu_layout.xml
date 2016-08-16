@@ -39,18 +39,23 @@
             android:textStyle="bold"
             android:textColor="#FFF"
             android:layout_weight="6"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
         <TextView
             android:paddingRight="20dp"
             android:id="@+id/next"
             android:gravity="right|center"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="넥스트"
             android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="#FFF"
-            android:layout_weight="3"/>
-
+            />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/inter"
