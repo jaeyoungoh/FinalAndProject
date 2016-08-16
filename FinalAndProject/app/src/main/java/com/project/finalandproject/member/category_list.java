@@ -13,21 +13,13 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-<<<<<<< HEAD
-=======
-import com.project.finalandproject.conn.MemConn;
-import com.project.finalandproject.test.gathering_insert;
->>>>>>> f61e7ad50a8485fe57462413f583ac221f363760
 import com.project.finalandproject.R;
+import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.GatheringDTO;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.test.Test_Menu_Activity;
-import com.project.finalandproject.test.gathering_insert;
 
 import org.json.simple.JSONObject;
-
-import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2016-08-10.
