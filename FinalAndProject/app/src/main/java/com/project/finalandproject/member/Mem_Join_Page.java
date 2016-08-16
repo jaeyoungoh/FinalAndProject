@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 
 
@@ -71,12 +73,12 @@ public class Mem_Join_Page extends Activity {
         dto.setPwd(member_pwd);
         dto.setEmail(member_email);
 
-     /*   try {
-            MemConn.connServer("join", dto);
+        try {
+            MemConn.getJSONDatas("join", dto);
 
         } catch (Exception e) {
             Log.d("sendPost===> ", e.toString());
-        }*/
+        }
 
         Toast.makeText(getApplicationContext(), "가입완료", Toast.LENGTH_LONG).show();
         intent = new Intent(getApplication(),category_list.class);

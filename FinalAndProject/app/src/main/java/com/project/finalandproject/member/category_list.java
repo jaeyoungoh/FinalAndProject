@@ -13,11 +13,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.project.finalandproject.test.gathering_insert;
+
 import com.project.finalandproject.R;
 import com.project.finalandproject.dto.GatheringDTO;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.test.Test_Menu_Activity;
+import com.project.finalandproject.test.gathering_insert;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ import java.util.ArrayList;
  * Created by Administrator on 2016-08-10.
  */
 public class category_list extends Activity{
+    private final String TAG = "출력맨";
     int count=0;
     String categorytxt="";
     Intent intent;
@@ -39,6 +41,7 @@ public class category_list extends Activity{
         setContentView(R.layout.top_menu_layout);
         intent=getIntent();
         type=intent.getStringExtra("type");
+        Log.d("tag", type);
         if(type.equals("mjoin")) {
             dto = (MemberDTO) intent.getSerializableExtra("dto");
             actList.add(new Mem_Join_Page());

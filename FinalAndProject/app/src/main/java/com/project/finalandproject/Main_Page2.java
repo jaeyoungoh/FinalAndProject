@@ -18,6 +18,7 @@ import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
 import com.project.finalandproject.member.category_list;
+import com.project.finalandproject.test.Test_Menu_Activity;
 
 import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
@@ -106,6 +107,7 @@ public class Main_Page2 extends Activity {
         public void run(boolean success) {
             if (success) { // 사용자가 네이버에서 로그인 성공
                 new RequestApiTask().execute(); // xml 받아옴
+
             } else { // 사용자가 네이버에서 로그인 실패
                 String errorCode = mOAuthLoginInstance.getLastErrorCode(mContext).getCode();
                 String errorDesc = mOAuthLoginInstance.getLastErrorDesc(mContext);
@@ -134,6 +136,7 @@ public class Main_Page2 extends Activity {
     }
 
     private void getnaverinfo(String xml) throws Exception {
+        Toast.makeText(getApplicationContext(), "네이버 가입완료", Toast.LENGTH_LONG).show();
         is = new InputSource(new StringReader(xml));
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -154,10 +157,41 @@ public class Main_Page2 extends Activity {
                 }
             }
         }
-        SubmitJoin(member_name, member_id, member_pwd, member_email);
+
+        MemberDTO m = new MemberDTO();
+        m.setName(member_name);
+        m.setId(member_id);
+        m.setPwd(member_pwd);
+        m.setEmail(member_email);
+        Intent intent;
+
+        if (((JSONObject)MemConn.getJSONDatas("login", m)).get("msg").toString().equals("Success")){ // 네이버 아이디가 존재할 경우
+            Log.d(TAG, "카테고리 조사가 필요하지 않음" );
+            intent = new Intent(getApplication(), Test_Menu_Activity.class);
+            startActivity(intent);
+
+        }else{ // 현재 네이버 아이디로 최초 로그인한 경우 (카테고리를 조사한다)
+            Log.d(TAG, "카테고리 조사가 필요함" );
+            SubmitJoin(m);
+
+            intent = new Intent(getApplication(),category_list.class);
+            intent.putExtra("dto",m);
+            intent.putExtra("type","mjoin");
+            startActivity(intent);
+        }
+
+/*
+
+        intent = new Intent(getApplication(),category_list.class);
+        intent.putExtra("dto",m);
+        intent.putExtra("type","mjoin");
+        startActivity(intent);
+
+        */
+
     }
 
-    private void SubmitJoin(String member_name,String member_id, String member_pwd, String member_email) { //조인 부분
+    private void SubmitJoin(MemberDTO dto) { //조인 부분
 //        String requestURL = "http://192.168.14.31:8805/finalproject/join.do";
 //        HttpClient client = new DefaultHttpClient();
 //        HttpPost post = new HttpPost(requestURL);
@@ -172,12 +206,6 @@ public class Main_Page2 extends Activity {
 //            HttpResponse response = client.execute(post);
 //        } catch (Exception e) {
 //        }
-        MemberDTO dto = new MemberDTO();
-        dto.setName(member_name);
-        dto.setId(member_id);
-        dto.setPwd(member_pwd);
-        dto.setEmail(member_email);
-
 
         JSONObject Jobj =null;
         try {
