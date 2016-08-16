@@ -54,6 +54,7 @@ public class gathering_chatting extends LinearLayout {
         this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         ListviewAdapter4 adapter =new ListviewAdapter4(getContext(),data);
         listView.setAdapter(adapter);
+
     }
 }
 

@@ -23,7 +23,6 @@ public class ListviewAdapter4 extends BaseAdapter {
     public ListviewAdapter4(Context context, ArrayList<Listviewitem4> data) {
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data = data;
-        this.layout = layout;
     }
 
     @Override
@@ -75,7 +74,7 @@ public class ListviewAdapter4 extends BaseAdapter {
             //히든 : 그룹번호, 아이디
 
         }
-
+        convertView = inflater.inflate(res, parent, false);
         return convertView;
     }
 }
