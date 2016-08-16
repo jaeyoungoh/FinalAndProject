@@ -24,9 +24,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.member.MemInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Test_Menu_Activity extends Activity implements OnClickListener {
 
@@ -38,6 +38,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 	private int leftMenuWidth;
 	private static boolean isLeftExpanded;
 	private Button btn1, btn2, btn3, btn4;
+	TextView whoid;
 	private ImageButton  bt_left;
 	ArrayList<Listviewitem> data2;
 
@@ -48,6 +49,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_menu_main);
 		LinearLayout inter = (LinearLayout) findViewById(R.id.inter);
+		whoid = (TextView)findViewById(R.id.whoid);
 
 
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -219,6 +221,7 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 			case R.id.bt_left:
 				menuLeftSlideAnimationToggle();
+                whoid.setText(MemInfo.USER_ID);
 				break;
 
 			case R.id.bt1:

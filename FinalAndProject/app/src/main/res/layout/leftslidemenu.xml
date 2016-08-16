@@ -37,6 +37,7 @@
                 android:layout_weight="1"/>
         </LinearLayout>
                 <TextView
+                    android:id="@+id/whoid"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0px"
