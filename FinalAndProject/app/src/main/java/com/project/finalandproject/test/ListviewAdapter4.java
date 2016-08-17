@@ -17,12 +17,11 @@ import java.util.ArrayList;
  * Created by Administrator on 2016-08-03.
  */
 public class ListviewAdapter4 extends BaseAdapter {
-    private LayoutInflater inflater;
+    private Context context;
     private ArrayList<Listviewitem4> data;
-    private int layout;
 
     public ListviewAdapter4(Context context, ArrayList<Listviewitem4> data) {
-        this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.context = context;
         this.data = data;
     }
 
@@ -32,8 +31,8 @@ public class ListviewAdapter4 extends BaseAdapter {
     }
 
     @Override
-    public String getItem(int position) {
-        return data.get(position).getMessage();
+    public Listviewitem4 getItem(int position) {
+        return data.get(position);
     }
 
     @Override
@@ -44,11 +43,16 @@ public class ListviewAdapter4 extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        int res = 0;
-        Log.i("layout",res+"=");
+       // Log.i("layout",res+"=");
+        int res = data.get(position).getType();//현재 위치의 Type을 조사해보고
         if (convertView == null) {
-           Log.i("layout",res+"+");
-            res = data.get(position).getType();//현재 위치의 Type을 조사해보고
+            //초기값설정
+        }
+            Log.i("position",position+"");
+
+            // Log.i("layout",res+"+");
+
+            Log.d("type", res+"");
             switch (res) {
                 case 0://0이면 textedit
                     res = R.layout.mitem;
@@ -57,16 +61,19 @@ public class ListviewAdapter4 extends BaseAdapter {
                     res = R.layout.mitem2;
                     break;
             }
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(res, parent, false);
-        }
+
         Listviewitem4 listviewitem = data.get(position);
+
         ImageView icon = (ImageView) convertView.findViewById(R.id.icon);
         icon.setImageResource(listviewitem.getIcon());
         TextView message = (TextView) convertView.findViewById(R.id.message);
         message.setText(listviewitem.getMessage());
         TextView date = (TextView) convertView.findViewById(R.id.date);
         date.setText(listviewitem.getDate() + "");
-
+        TextView id = (TextView) convertView.findViewById(R.id.id);
+        id.setText(listviewitem.getId() + "");
 
         //최초 호출이면 항목 뷰를 생성한다.
         //타입별로 뷰를 다르게 디자인 할 수 있으며 높이가 달라도 상관없다.

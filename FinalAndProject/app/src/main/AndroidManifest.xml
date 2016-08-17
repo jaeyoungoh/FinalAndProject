@@ -20,7 +20,10 @@
         <activity android:name=".gathering.Gathering_Search_Page">
         </activity>
         <activity android:name=".test.Test_Menu_Activity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".member.category_list"></activity>
         <activity android:name=".test.ListviewActivity"></activity>
@@ -31,15 +34,8 @@
         </activity>
         <activity android:name=".member.Mem_Join_Page" >
         </activity>
-
-        <activity android:name=".test.Main_Page">
-        </activity>
         <activity android:name=".test.TestCalender"></activity>
         <activity android:name=".Main_Page2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".test.gathering_insert"
             android:windowSoftInputMode="adjustPan"/>

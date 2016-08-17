@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.project.finalandproject.R;
 import com.project.finalandproject.conn.GatheringConn;
@@ -28,6 +29,9 @@ public class gathering_chatting extends LinearLayout {
     //gathering_list
 
     Context context;
+    ArrayList<Listviewitem4> data;
+    ListView listView;
+    ListviewAdapter4 adapter;
 
     public gathering_chatting(Context context) {
         super(context);
@@ -39,49 +43,74 @@ public class gathering_chatting extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         inflater.inflate(R.layout.gathering_chatting, this, true);
+        listView = (ListView) findViewById(R.id.listview);
+        this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        data= new ArrayList<Listviewitem4>();
         itemInsert();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    for (int i = 0; i < 10; i++) {
+                        itemInsert2();
+                        Log.i("msg",i+"");
+                    }/*
+                adapter = new ListviewAdapter4(getContext(), data);
+                listView.setAdapter(adapter);*/
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
     }
 
-    private void itemInsert(){
-//        Listviewitem3 test1,test3,test2,test4;
-        ArrayList<Listviewitem4> data=null;
-        ListView listView;
-        listView=(ListView)findViewById(R.id.listview);
-        Log.i("date",new Date(2016,8,16)+"");
-        data=new ArrayList<Listviewitem4>();
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕","1",new Date(2016,8,16),"1",0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"뭐해","1",new Date(2016,8,16),"1",0));
+    private void itemInsert2() {
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "안녕22222" , "진혁이", new Date(System.currentTimeMillis()), "2", 1));
+        adapter.notifyDataSetChanged();
 
 
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"잔다","1",new Date(2016,8,16),"2",1));
+    }
 
 
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"안녕","1",new Date(2016,8,16),"1",0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"뭐해","1",new Date(2016,8,16),"1",0));
+    private void itemInsert() {
 
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕","1",new Date(2016,8,16),"2",1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"잔다","1",new Date(2016,8,16),"2",1));  data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"안녕","1",new Date(2016,8,16),"1",0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"뭐해","1",new Date(2016,8,16),"1",0));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 1));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 1));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
+        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
+/*
 
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"안녕","1",new Date(2016,8,16),"2",1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"잔다","1",new Date(2016,8,16),"2",1));  data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"안녕","1",new Date(2016,8,16),"1",0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"뭐해","1",new Date(2016,8,16),"1",0));
-
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"안녕","1",new Date(2016,8,16),"2",1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"잔다","1",new Date(2016,8,16),"2",1));  data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"안녕","1",new Date(2016,8,16),"1",0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"뭐해","1",new Date(2016,8,16),"1",0));
-
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"안녕","1",new Date(2016,8,16),"2",1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"잔다","1",new Date(2016,8,16),"2",1));  data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"안녕","1",new Date(2016,8,16),"1",0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp,"뭐해","1",new Date(2016,8,16),"1",0));
-
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"안녕","1",new Date(2016,8,16),"2",1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp,"잔다","1",new Date(2016,8,16),"2",1));
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(context,"선택"+data.get(i).toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
 //int icon, String name, String num, Date date,String id
-        this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        ListviewAdapter4 adapter =new ListviewAdapter4(getContext(),data);
+
+*/
+
+        //listView.requestFocusFromTouch();
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "잔다1", "1", new Date(2016, 8, 16), "2", 0));
+        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "분기점2", "1", new Date(2016, 8, 16), "2", 0));
+        adapter = new ListviewAdapter4(context.getApplicationContext(), data);
         listView.setAdapter(adapter);
+        listView.setSelection(data.size()-1);
+        listView.setDivider(null);
 
     }
 }
