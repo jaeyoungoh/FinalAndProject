@@ -18,7 +18,6 @@ import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
 import com.project.finalandproject.member.category_list;
-import com.project.finalandproject.test.Test_Menu_Activity;
 
 import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
@@ -165,6 +164,14 @@ public class Main_Page2 extends Activity {
         m.setEmail(member_email);
         Intent intent;
 
+
+        intent = new Intent(getApplication(),category_list.class);
+        intent.putExtra("dto",m);
+        intent.putExtra("type","mjoin");
+        startActivity(intent);
+/*
+
+
         if (((JSONObject)MemConn.getJSONDatas("login", m)).get("msg").toString().equals("Success")){ // 네이버 아이디가 존재할 경우
             Log.d(TAG, "카테고리 조사가 필요하지 않음" );
             intent = new Intent(getApplication(), Test_Menu_Activity.class);
@@ -179,6 +186,7 @@ public class Main_Page2 extends Activity {
             intent.putExtra("type","mjoin");
             startActivity(intent);
         }
+*/
 
 /*
 
