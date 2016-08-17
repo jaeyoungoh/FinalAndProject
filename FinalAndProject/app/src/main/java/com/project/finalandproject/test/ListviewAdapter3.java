@@ -30,7 +30,7 @@ public class ListviewAdapter3 extends BaseAdapter {
         return data.size();
     }
     @Override
-    public String getItem(int position){return data.get(position).getName();}
+    public Listviewitem3 getItem(int position){return data.get(position);}
     @Override
     public long getItemId(int position){return position;}
     @Override

@@ -2,26 +2,15 @@ package com.project.finalandproject.test;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.project.finalandproject.R;
 
@@ -66,7 +55,7 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.bt3)).setOnClickListener(this);
 		((Button) findViewById(R.id.bt4)).setOnClickListener(this);
 
-		container.addView(new gathering_view(getApplication()));
+		container.addView(new gathering_view2(getApplication(),getIntent()));
 		((Button) findViewById(R.id.bt1)).setTextColor(getResources().getColor(R.color.c1));
 		((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
 		//리스트뷰 아이템추가
@@ -106,17 +95,17 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 			if (i == 0) {
 				((Button) findViewById(R.id.bt1)).setTextColor(getResources().getColor(R.color.c1));
 				((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
-				container.addView(new gathering_view(getApplication()));
+				container.addView(new gathering_view2(getApplication(),getIntent()));
 			} else if (i == 1) {
 				((Button) findViewById(R.id.bt2)).setTextColor(getResources().getColor(R.color.c1));
 				((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt2)).getX());
-				container.addView(new gathering_view(getApplication()));
+				container.addView(new gathering_view2(getApplication(),getIntent()));
 			/*container.addView(new Setting_page(getApplication()));*/
 			} else if (i == 2) {
 				//container.addView(new gathering_list(getApplication()));
 				((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt3)).getX());
 				((Button) findViewById(R.id.bt3)).setTextColor(getResources().getColor(R.color.c1));
-				container.addView(new gathering_view(getApplication()));
+				container.addView(new gathering_view2(getApplication(),getIntent()));
 			} else if (i == 3) {
 				((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt4)).getX());
 				container.addView(new gathering_chatting(getApplication()));

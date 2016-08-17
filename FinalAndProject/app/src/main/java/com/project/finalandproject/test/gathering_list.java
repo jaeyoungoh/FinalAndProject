@@ -2,6 +2,7 @@ package com.project.finalandproject.test;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,8 @@ public class gathering_list extends LinearLayout {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(context, Test_Menu_Activity2.class);
-                intent.putExtra("num",(String)adapterView.getAdapter().getItem(2));
+                Log.i("num",((Listviewitem3)adapterView.getAdapter().getItem(i)).getNum());
+                intent.putExtra("num",(String)((Listviewitem3)adapterView.getAdapter().getItem(i)).getNum());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
                 //선택한 아이템의 num 전송.
