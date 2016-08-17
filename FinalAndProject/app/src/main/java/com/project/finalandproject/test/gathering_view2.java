@@ -40,7 +40,7 @@ public class gathering_view2 extends LinearLayout {
         this.context = context;
         this.intent=intent;
 
-        String num = intent.getStringExtra("num");
+        String num = intent.getStringExtra("num"); //Intent로 num을 받아옴.
 
 
 
@@ -54,9 +54,13 @@ public class gathering_view2 extends LinearLayout {
         GATHERING_MAX_CNT = (TextView) findViewById(R.id.GATHERING_MAX_CNT);
         GATHERING_LOCATION = (TextView) findViewById(R.id.GATHERING_LOCATION);
 
-        obj = (JSONObject) jArr.get(Integer.parseInt(num));
+        obj = (JSONObject) jArr.get(Integer.parseInt(num)-1);  //num으로 자료 검색.
         Log.i("title",obj.get("Gathering_title").toString());
         GATHERING_TITLE.setText(""+obj.get("Gathering_title").toString());
+        GATHERING_CONTENT.setText(""+obj.get("Gathering_content").toString());
+        GATHERING_HASHTAG.setText(""+obj.get("Gathering_hashtag").toString());
+        GATHERING_MAX_CNT.setText(""+obj.get("Gathering_max_cnt").toString());
+        GATHERING_LOCATION.setText(""+obj.get("Gathering_location").toString());
     }
 
 
