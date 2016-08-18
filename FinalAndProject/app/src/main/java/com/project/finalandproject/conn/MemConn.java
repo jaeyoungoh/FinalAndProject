@@ -43,6 +43,7 @@ public class MemConn {
             paramList.add(new BasicNameValuePair("id", ((MemberDTO) obj).getId()));
             paramList.add(new BasicNameValuePair("pwd", ((MemberDTO) obj).getPwd()));
             paramList.add(new BasicNameValuePair("email", ((MemberDTO) obj).getEmail()));
+            paramList.add(new BasicNameValuePair("interest", ((MemberDTO) obj).getInterest()));
 
         } else if(type.equals("makeProfile")){
             requestURL.append("makeprofile.do");
@@ -56,9 +57,9 @@ public class MemConn {
         } else if (type.equals("info")){
             requestURL.append("info.do");
 //            paramList.add(new BasicNameValuePair("id", MemInfo.USER_ID));
-            Log.i("result","요청할 URL 주소 : "+requestURL.toString());
             paramList.add(new BasicNameValuePair("id", "1234"));
         }
+        Log.i("result","요청할 URL 주소 : "+requestURL.toString());
         return paramList;
     }
 

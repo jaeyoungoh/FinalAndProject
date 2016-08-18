@@ -56,33 +56,9 @@ public class gathering_chatting extends LinearLayout {
             }
         });
     }
-   
-      
-
-        
-
-
 
     private void itemInsert() {
 
- /*       data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 1));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
-        data.add(new Listviewitem4(R.drawable.ic_account_circle_black_48dp, "안녕안녕안녕안녕안녕안녕녕안녕안녕안녕안녕", "1", new Date(2016, 8, 16), "1", 0));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "뭐해", "1", new Date(2016, 8, 16), "아이디", 1));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "잔다1", "1", new Date(2016, 8, 16), "2", 0));
-        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, "분기점2", "1", new Date(2016, 8, 16), "2", 0));*/
         adapter = new ListviewAdapter4(context, data);
         listView.setAdapter(adapter);
         listView.setSelection(data.size()-1);
@@ -123,6 +99,8 @@ public class gathering_chatting extends LinearLayout {
         new Thread(new Runnable() {
             @Override
             public void run() {
+//                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy");
+
                 while (true) {
                     try {
                         ChatDTO inC = (ChatDTO)is.readObject();
@@ -131,7 +109,7 @@ public class gathering_chatting extends LinearLayout {
                         if(inC.getId().equals(info.getId())){
                             type =1;
                         }
-                        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, inC.getContent(), String.valueOf(inC.getGathering_num()), new Date(2016, 8, 16), inC.getId(), type));
+                        data.add(new Listviewitem4(R.drawable.ic_search_black_48dp, inC.getContent(), String.valueOf(inC.getGathering_num()), new Date(), inC.getId(), type));
                         activity.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
