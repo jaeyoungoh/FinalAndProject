@@ -50,11 +50,12 @@
                 android:backgroundTint="#FFF"
                 android:textColor="@color/c10"
                 android:id="@+id/submit"
-                android:text="생성"
+                android:hint="Message Input"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <ImageButton
+                android:id="@+id/msgSend"
                 android:scaleType="fitCenter"
                 android:layout_gravity="right|center"
                 android:layout_width="40dp"
