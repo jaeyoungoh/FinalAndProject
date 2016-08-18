@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.chat.gathering_chatting;
 
 import java.util.ArrayList;
 
@@ -108,7 +109,7 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 				container.addView(new gathering_view2(getApplication(),getIntent()));
 			} else if (i == 3) {
 				((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt4)).getX());
-				container.addView(new gathering_chatting(getApplication()));
+				container.addView(new gathering_chatting(getApplication(),this));
 				//container.addView(new test_in(getApplication()));
 			}
 
