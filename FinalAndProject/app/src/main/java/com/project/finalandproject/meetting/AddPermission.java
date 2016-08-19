@@ -14,7 +14,6 @@ import android.util.Log;
 public class AddPermission {
 
     static public boolean add(String permission, Activity activity) {
-        boolean b=false;
         if (Build.VERSION.SDK_INT >= 23) {
             //사용 권한 체크(사용권한이 없을 경우)
             if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
@@ -30,6 +29,8 @@ public class AddPermission {
                 }
             }
         }
-        return ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED;
+        Log.i("a permission", (ActivityCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_GRANTED)+"");
+        Log.i("c permission", (ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_GRANTED)+"");
+        return ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_GRANTED;
     }
 }

@@ -36,8 +36,10 @@ public class meetting_insert extends Activity{
         String msg = "request : "+ requestCode + " / result : "+ resultCode +" / data : "+data;
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
        /* MeettingDTO dto=new MeettingDTO();*/
-        ((TextView) findViewById(R.id.MEETTING_LOCATION_TITLE)).setText(data.getStringExtra("title"));
-        MEETTING_LOCATION=data.getStringExtra("location");
+        if(data!=null) {
+            ((TextView) findViewById(R.id.MEETTING_LOCATION_TITLE)).setText(data.getStringExtra("title"));
+            MEETTING_LOCATION = data.getStringExtra("location");
+        }
     }
 
 
@@ -65,8 +67,9 @@ public class meetting_insert extends Activity{
         ((TextView)findViewById(R.id.GATHERING_LOCATION_ICON)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AddPermission.add("android.permission.ACCESS_FINE_LOCATION",activity);
+                if((ContextCompat.checkSelfPermission(activity,"android.permission.ACCESS_FINE_LOCATION") == PackageManager.PERMISSION_GRANTED)){
 
-                if(AddPermission.add("android.permission.ACCESS_FINE_LOCATION",activity)){
                     Intent intent=new Intent(getApplicationContext(), SearchRoute.class);
                     startActivityForResult(intent, 100);
                 }else {

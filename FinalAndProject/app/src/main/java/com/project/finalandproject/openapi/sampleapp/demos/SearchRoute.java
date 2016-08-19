@@ -64,6 +64,7 @@ public class SearchRoute extends FragmentActivity implements MapView.MapViewEven
 
 
         mMapView = (MapView)findViewById(R.id.map_view);
+		mMapView.setEnabled(false);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setMapViewEventListener(this);
         mMapView.setPOIItemEventListener(this);

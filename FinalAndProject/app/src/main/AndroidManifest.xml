@@ -18,6 +18,7 @@
         <activity android:name=".test.Image_upload">
         </activity>
         <activity
+            android:theme="@style/Base.Theme.AppCompat.Dialog"
             android:name=".openapi.sampleapp.demos.SearchRoute"
             android:label="Search">
     </activity>
@@ -25,12 +26,13 @@
         <activity android:name=".gathering.Gathering_Search_Page">
         </activity>
         <activity android:name=".test.Test_Menu_Activity">
+        </activity>
+        <activity android:name=".meetting.meetting_insert">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".meetting.meetting_insert"></activity>
 
         <activity android:name=".member.category_list"></activity>
         <activity android:name=".test.ListviewActivity"></activity>
@@ -45,7 +47,8 @@
         <activity android:name=".Main_Page2">
         </activity>
         <activity android:name=".test.gathering_insert"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan">
+        </activity>
         <activity android:name=".test.Test_Menu_Activity2"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".Main_page3"></activity>
