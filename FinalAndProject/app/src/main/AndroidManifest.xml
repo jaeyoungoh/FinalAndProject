@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,10 @@
 
         <activity android:name=".test.Image_upload">
         </activity>
-
+        <activity
+            android:name=".openapi.sampleapp.demos.SearchRoute"
+            android:label="Search">
+    </activity>
 
         <activity android:name=".gathering.Gathering_Search_Page">
         </activity>
@@ -25,6 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".meetting.meetting_insert"></activity>
+
         <activity android:name=".member.category_list"></activity>
         <activity android:name=".test.ListviewActivity"></activity>
         <activity android:name=".test.TestTopView" />
@@ -44,6 +51,8 @@
         <activity android:name=".Main_page3"></activity>
 
         <activity android:name=".test.Setting_page"></activity>
+
+
         <!-- 네이버 라이브러리 -->
         <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>

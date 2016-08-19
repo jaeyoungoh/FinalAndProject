@@ -22,6 +22,7 @@ android {
 }
 
 dependencies {
+    compile files('libs/android-async-http-1.4.4.jar')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
@@ -34,5 +35,7 @@ dependencies {
     //  compile 'org.kie.modules:org-apache-commons-fileupload:6.5.0.Beta1'
     //  compile 'org.kie.modules:org-apache-commons-httpclient:6.2.0.CR2'
     compile files('libs/android-async-http-1.4.4.jar')
-    provided 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    compile files('libs/daumApi.jar')
+    compile files('libs/libDaumMapAndroid.jar')
+provided 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 }

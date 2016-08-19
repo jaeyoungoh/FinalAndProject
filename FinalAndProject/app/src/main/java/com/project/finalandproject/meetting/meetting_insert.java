@@ -1,46 +1,57 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.meetting;
 
+import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.finalandproject.R;
-import com.project.finalandproject.dto.GatheringDTO;
-import com.project.finalandproject.member.category_list;
+import com.project.finalandproject.dto.MeettingDTO;
+import com.project.finalandproject.openapi.sampleapp.demos.SearchRoute;
+
 
 /**
  * Created by Administrator on 2016-08-10.
  */
-public class gathering_insert extends Activity{
-    AlertDialog.Builder ad;
-    String msg[];
+public class meetting_insert extends Activity{
+    TextView MEETTING_CONTENT, MEETTING_EVENT_DATE, MEETTING_LOCATION_TITLE, MEETTING_TITLE;
+    String MEETTING_LOCATION;
+    Activity activity=this;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String msg = "request : "+ requestCode + " / result : "+ resultCode +" / data : "+data;
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+       /* MeettingDTO dto=new MeettingDTO();*/
+        ((TextView) findViewById(R.id.MEETTING_LOCATION_TITLE)).setText(data.getStringExtra("title"));
+        MEETTING_LOCATION=data.getStringExtra("location");
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.top_menu_layout);
+
+
         LinearLayout container=(LinearLayout) findViewById(R.id.inter);
         TextView title=(TextView) findViewById(R.id.title);
         TextView next=(TextView) findViewById(R.id.next);
         next.setText("");
-        title.setText("그룹생성");
+        title.setText("만남생성");
         ImageButton back=(ImageButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,30 +59,31 @@ public class gathering_insert extends Activity{
                 finish();
             }
         });
-        ad=new AlertDialog.Builder(this);
-        ad.setTitle("주 활동지역");
-        msg=getResources().getStringArray(R.array.area);
-        ad.setItems(msg, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int index) {
-                ((TextView)findViewById(R.id.GATHERING_LOCATION)).setText(msg[index]);
-            }
-        });
-
+        Log.i("msg",ContextCompat.checkSelfPermission(this,"android.permission.ACCESS_FINE_LOCATION")+"");
         LayoutInflater inflater=(LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        ((LinearLayout)findViewById(R.id.gathering_insert)).setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        inflater.inflate(R.layout.gathering_insert, container,true);
+        inflater.inflate(R.layout.meetting_insert, container,true);
         ((TextView)findViewById(R.id.GATHERING_LOCATION_ICON)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ad.show();
+
+                if(AddPermission.add("android.permission.ACCESS_FINE_LOCATION",activity)){
+                    Intent intent=new Intent(getApplicationContext(), SearchRoute.class);
+                    startActivityForResult(intent, 100);
+                }else {
+
+                }
+
+
+
             }
         });
+
+
         ((Button)findViewById(R.id.submit)).setOnClickListener(new View.OnClickListener() {
             @Override
             //해쉬태크, 빈칸,
             public void onClick(View view) {
-                String arr[]=((EditText) findViewById(R.id.GATHERING_HASHTAG)).getText().toString().split("#");
+              /*  String arr[]=((EditText) findViewById(R.id.GATHERING_HASHTAG)).getText().toString().split("#");
                 if(((TextView)findViewById(R.id.GATHERING_LOCATION)).getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(),"주 활동지역을 입력해주세요.",Toast.LENGTH_SHORT).show();
                 }else if(((RadioGroup)findViewById(R.id.gathering_max_sex)).getCheckedRadioButtonId()==-1){
@@ -104,13 +116,10 @@ public class gathering_insert extends Activity{
                     intent.putExtra("dto", dto);
                     intent.putExtra("type", "gjoin");
                     startActivity(intent);
-                }
+                }*/
             }
         });
     }
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-    }
+
 }
