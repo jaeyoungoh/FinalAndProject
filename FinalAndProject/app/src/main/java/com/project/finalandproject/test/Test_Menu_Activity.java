@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -68,7 +69,9 @@ public class Test_Menu_Activity extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.bt4)).setOnClickListener(this);
 
 		initSildeMenu();
+		Log.i("menu","menu생성성공");
 		container.addView(new gathering_list(getApplication()));
+		Log.i("menu","menu생성성공2");
 		((Button) findViewById(R.id.bt1)).setTextColor(Color.WHITE);
 		((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());
 		//리스트뷰 아이템추가

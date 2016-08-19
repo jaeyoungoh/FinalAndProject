@@ -60,7 +60,7 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 		/*container.addView(new gathering_view2(getApplication(),getIntent()));
 		((Button) findViewById(R.id.bt1)).setTextColor(getResources().getColor(R.color.c1));
 		((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());*/
-		clickmenu(0);
+		clickmenu(4);
 
 		//리스트뷰 아이템추가
 	}

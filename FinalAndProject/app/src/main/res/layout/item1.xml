@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:padding="10dp">
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:scaleType="fitCenter"
         android:id="@+id/imageview"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:tint="@color/color_tint"/>
+        app:backgroundTint="@color/color_tint"
+        tools:backgroundTint="@color/color_tint"
+        />
     <TextView
         android:paddingLeft="20dp"
         android:id="@+id/textview"

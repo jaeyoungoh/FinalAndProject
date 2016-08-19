@@ -37,6 +37,7 @@ public class gathering_list extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.gathering_list_view, this, true);
         itemInsert();
+        Log.i("msg","리스트뽑기");
     }
 
     private void itemInsert(){
@@ -44,8 +45,8 @@ public class gathering_list extends LinearLayout {
         Listviewitem3 test;
         ArrayList<Listviewitem3> data;
         ListView listView;
-        listView=(ListView)findViewById(R.id.listview);
-        final ImageButton gathering_insert=(ImageButton)findViewById(R.id.gathering_insert);
+        listView=(ListView)findViewById(R.id.listview1);
+        final ImageButton gathering_insert=(ImageButton)findViewById(R.id.btn_gathering_insert);
         gathering_insert.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +79,10 @@ public class gathering_list extends LinearLayout {
             data.add(test);
         }
         this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        ListviewAdapter3 adapter =new ListviewAdapter3(getContext(),R.layout.item,data);
+        Log.i("msg","여기까지옴1");
+        ListviewAdapter3 adapter =new ListviewAdapter3(context,R.layout.item,data);
+        Log.i("msg","여기까지옴2");
         listView.setAdapter(adapter);
+        Log.i("msg","여기까지옴3");
     }
 }

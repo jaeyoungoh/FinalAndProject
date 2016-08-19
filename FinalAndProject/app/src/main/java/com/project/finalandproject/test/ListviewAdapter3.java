@@ -39,9 +39,9 @@ public class ListviewAdapter3 extends BaseAdapter {
             convertView=inflater.inflate(layout,parent,false);
         }
         Listviewitem3 listviewitem=data.get(position);
-        ImageView icon=(ImageView)convertView.findViewById(R.id.imageview);
+        ImageView icon=(ImageView)convertView.findViewById(R.id.imageview1);
         icon.setImageResource(listviewitem.getIcon());
-        TextView name=(TextView)convertView.findViewById(R.id.textview);
+        TextView name=(TextView)convertView.findViewById(R.id.textview1);
         name.setText(listviewitem.getName());
         TextView num=(TextView)convertView.findViewById(R.id.GATHERING_NUM);
         num.setText(listviewitem.getNum());

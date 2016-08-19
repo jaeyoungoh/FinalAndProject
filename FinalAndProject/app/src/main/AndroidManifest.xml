@@ -26,16 +26,15 @@
         <activity android:name=".gathering.Gathering_Search_Page">
         </activity>
         <activity android:name=".test.Test_Menu_Activity">
-        </activity>
-        <activity android:name=".meetting.meetting_insert">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".meetting.meetting_insert">
+        </activity>
 
         <activity android:name=".member.category_list"></activity>
-        <activity android:name=".test.ListviewActivity"></activity>
         <activity android:name=".test.TestTopView" />
         <activity android:name=".test.TestJava"></activity>
         <activity android:name=".member.Mem_Join_Success_page" />
@@ -50,7 +49,10 @@
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity android:name=".test.Test_Menu_Activity2"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
+
         <activity android:name=".Main_page3"></activity>
 
         <activity android:name=".test.Setting_page"></activity>

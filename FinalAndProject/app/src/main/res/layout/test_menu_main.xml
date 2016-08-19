@@ -28,14 +28,15 @@
                 android:layout_weight="1.5"
                 >
 
-                <ImageButton
+                <android.support.v7.widget.AppCompatImageButton
                     android:scaleType="fitCenter"
                     android:layout_gravity="center|left"
                     android:id="@+id/bt_left"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:backgroundTint="#aafcec83"
-                    android:background="@drawable/honeycomb" />
+                    android:tint="#aafcec83"
+                    android:background="#00ffffff"
+                    android:src="@drawable/honeycomb" />
 
 
             <!--    <LinearLayout

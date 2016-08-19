@@ -1,6 +1,11 @@
 package com.project.finalandproject.test;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Build;
+import android.support.v7.widget.AppCompatImageView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,8 +45,10 @@ public class ListviewAdapter extends BaseAdapter {
             convertView=inflater.inflate(layout,parent,false);
         }
         Listviewitem listviewitem=data.get(position);
-        ImageView icon=(ImageView)convertView.findViewById(R.id.imageview);
+
+        AppCompatImageView icon=(AppCompatImageView)convertView.findViewById(R.id.imageview);
         icon.setImageResource(listviewitem.getIcon());
+        icon.setColorFilter(R.color.color_tint);
         TextView name=(TextView)convertView.findViewById(R.id.textview);
         name.setText(listviewitem.getName());
         return convertView;

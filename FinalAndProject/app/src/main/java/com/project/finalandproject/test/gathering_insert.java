@@ -18,7 +18,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +58,7 @@ public class gathering_insert extends Activity{
         });
 
         LayoutInflater inflater=(LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        ((LinearLayout)findViewById(R.id.gathering_insert)).setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+       /* ((LinearLayout)findViewById(R.id.gathering_insert)).setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));*/
         inflater.inflate(R.layout.gathering_insert, container,true);
         ((TextView)findViewById(R.id.GATHERING_LOCATION_ICON)).setOnClickListener(new View.OnClickListener() {
             @Override

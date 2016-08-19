@@ -14,19 +14,17 @@
             android:id="@+id/bt_back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:paddingTop="20px"
-            android:paddingBottom="20px"
             android:layout_weight="1">
             <ImageButton
-                android:layout_margin="20px"
+                android:layout_margin="10px"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center|left"
                 android:layout_weight="1"
                 android:id="@+id/back"
-                android:backgroundTint="#aafcec83"
-                android:background="@drawable/backward_arrow" />
+                android:background="#00ffffff"
+                android:src="@drawable/backward_arrow" />
         </LinearLayout>
         <TextView
             android:paddingLeft="20px"
