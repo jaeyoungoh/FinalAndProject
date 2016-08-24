@@ -110,9 +110,8 @@ android:background="@drawable/login"
 
 
                     <Button
-                        android:background="@drawable/round1"
+                        android:background="@drawable/round4"
                         android:layout_margin="10dp"
-                        android:backgroundTint="@color/c2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="Login"
@@ -121,9 +120,8 @@ android:background="@drawable/login"
                         android:textStyle="bold" />
 
                     <Button
-                        android:background="@drawable/round1"
+                        android:background="@drawable/round3"
                         android:layout_margin="10dp"
-                        android:backgroundTint="@color/c4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="Join"

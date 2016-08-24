@@ -50,7 +50,7 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.test_top2, containerInflater, true);
 		//메뉴1 버튼 추가.
-		((LinearLayout) findViewById(R.id.bt_back)).setOnClickListener(this);
+		((ImageButton) findViewById(R.id.back)).setOnClickListener(this);
 
 		((Button) findViewById(R.id.bt1)).setOnClickListener(this);
 		((Button) findViewById(R.id.bt2)).setOnClickListener(this);
@@ -60,7 +60,7 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 		/*container.addView(new gathering_view2(getApplication(),getIntent()));
 		((Button) findViewById(R.id.bt1)).setTextColor(getResources().getColor(R.color.c1));
 		((View) findViewById(R.id.select)).setX(((Button) findViewById(R.id.bt1)).getX());*/
-		clickmenu(4);
+		clickmenu(0);
 
 		//리스트뷰 아이템추가
 	}
@@ -70,7 +70,7 @@ public class Test_Menu_Activity2 extends Activity implements OnClickListener {
 	public void onClick(View v) {
 
 		switch (v.getId()) {
-			case R.id.bt_back:
+			case R.id.back:
 				finish();
 				break;
 

@@ -153,9 +153,8 @@
             android:gravity="top|center">
             <Button
                 android:textSize="20dp"
-                android:background="@drawable/round1"
+                android:background="@drawable/round3"
                 android:layout_margin="10px"
-                android:backgroundTint="@color/c4"
                 android:textColor="@color/c1"
                 android:id="@+id/joinsubmit"
                 android:onClick="SubmitJoin"
@@ -167,7 +166,7 @@
             <Button
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:background="@drawable/round1"
+                android:background="@drawable/round4"
                 android:layout_margin="10px"
                 android:backgroundTint="@color/c4"
                 android:textColor="@color/c1"

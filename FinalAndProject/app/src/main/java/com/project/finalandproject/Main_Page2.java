@@ -55,20 +55,20 @@ public class Main_Page2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        naver_logout = (Button)findViewById(R.id.naver_logout);
-/*        naver_logout.setOnClickListener(new View.OnClickListener() {
+/*        naver_logout = (Button)findViewById(R.id.naver_logout);
+*//*        naver_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mOAuthLoginInstance.logout(mContext);
             }
-        });*/
+        });*//*
         naver_out = (Button)findViewById(R.id.naver_out);
         naver_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DeleteTokenTask().execute();
             }
-        });
+        });*/
 
         Logbt = (Button) findViewById(R.id.Log);
         Logbt.setOnClickListener(new View.OnClickListener() {

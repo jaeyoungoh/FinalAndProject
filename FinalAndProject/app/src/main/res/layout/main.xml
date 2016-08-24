@@ -45,40 +45,16 @@ android:background="@drawable/login"
             android:textStyle="bold" />
 
         <Button
-            android:background="@drawable/round1"
+            android:background="@drawable/round4"
             android:text="간편 로그인"
             android:id="@+id/Log"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/c2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textSize="15dp"
             android:textStyle="bold" />
 
-            <Button
-                android:background="@drawable/round1"
-                android:text="네이버 로그아웃(테스트용)"
-                android:id="@+id/naver_logout"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/c2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:background="@drawable/round1"
-                android:text="네이버 탈퇴(테스트용)"
-                android:id="@+id/naver_out"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/c2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="15dp"
-                android:textStyle="bold" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

@@ -63,7 +63,6 @@
 
                 <TextView
                     android:background="@drawable/round"
-                    android:backgroundTint="#0000ffff"
                     android:id="@+id/GATHERING_LOCATION"
                     android:paddingRight="20dp"
                     android:gravity="right|center"
@@ -124,7 +123,7 @@
                 android:backgroundTint="@color/c7"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="5"
+                android:layout_weight="8"
                 android:layout_margin="10dp"
         android:orientation="vertical"
                 >
@@ -164,10 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="7">
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2">
+
                         <EditText
                             android:focusable="true"
                             android:textCursorDrawable="@drawable/cursor"
@@ -179,9 +175,7 @@
                             android:textStyle="bold"
                             android:background="@drawable/round"
                             android:layout_height="match_parent"
-
-                            android:inputType="text"/>
-                    </ScrollView>
+                                    />
 
                 </LinearLayout>
             </LinearLayout>
@@ -267,11 +261,11 @@
             android:gravity="center">
             <Button
                 android:textSize="20dp"
-                android:background="@drawable/round1"
+                android:background="@drawable/round3"
                 android:layout_margin="10px"
-                android:backgroundTint="@color/c4"
                 android:textColor="#fff"
                 android:id="@+id/submit"
+                android:textStyle="bold"
                 android:text="생성"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
