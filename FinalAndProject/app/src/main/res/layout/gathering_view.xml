@@ -46,6 +46,7 @@
         android:orientation="vertical"
                 >
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
@@ -67,6 +68,7 @@
                     />
             
                 <TextView
+                    android:padding="10dp"
                     android:backgroundTint="@color/c8"
                     android:text="모임 이름"
                     android:id="@+id/GATHERING_TITLE"
@@ -81,6 +83,7 @@
                     android:inputType="text"/>
             </LinearLayout>
                 <LinearLayout
+                    android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -127,10 +130,10 @@
                     android:layout_height="0dp"
                     android:layout_weight="2">
                         <TextView
+                            android:padding="10dp"
                             android:textColor="@color/c1"
                             android:textSize="15dp"
                             android:focusable="true"
-                            android:padding="20dp"
                             android:text="어떤 모임인지 설명해 주세요."
                             android:id="@+id/GATHERING_CONTENT"
                             android:layout_width="match_parent"
@@ -154,6 +157,7 @@
                 android:layout_margin="10dp"
                 >
                 <TextView
+                    android:padding="10dp"
                     android:paddingLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="2"
