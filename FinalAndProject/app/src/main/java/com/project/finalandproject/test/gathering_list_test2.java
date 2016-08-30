@@ -48,7 +48,7 @@ public class gathering_list_test2 extends LinearLayout {
         gathering_insert.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, gathering_insert.class);
+                Intent intent = new Intent(context, com.project.finalandproject.gathering.gathering_insert.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

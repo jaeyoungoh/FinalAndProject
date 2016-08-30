@@ -8,7 +8,7 @@ public class GatheringDTO implements Serializable {
 	private String gathering_content;
 	private String gathering_category;
 	private String gathering_location;
-	private int gathering_max_cnt;
+	private String gathering_max_cnt;
 	private String gathering_max_age;
 	private String gathering_max_sex;
 	private String gathering_type;
@@ -20,7 +20,7 @@ public class GatheringDTO implements Serializable {
 	
 	public GatheringDTO(){};
 	public GatheringDTO(int gathering_num, String gathering_title, String gathering_content, String gathering_category,
-			String gathering_location, int gathering_max_cnt, String gathering_max_age, String gathering_max_sex,
+			String gathering_location, String gathering_max_cnt, String gathering_max_age, String gathering_max_sex,
 			String gathering_type, String gathering_hashtag, int gathering_rating, String gathering_photo,
 			String gathering_gallery) {
 		this.gathering_num = gathering_num;
@@ -67,10 +67,10 @@ public class GatheringDTO implements Serializable {
 	public void setGathering_location(String gathering_location) {
 		this.gathering_location = gathering_location;
 	}
-	public int getGathering_max_cnt() {
+	public String getGathering_max_cnt() {
 		return gathering_max_cnt;
 	}
-	public void setGathering_max_cnt(int gathering_max_cnt) {
+	public void setGathering_max_cnt(String gathering_max_cnt) {
 		this.gathering_max_cnt = gathering_max_cnt;
 	}
 	public String getGathering_max_age() {

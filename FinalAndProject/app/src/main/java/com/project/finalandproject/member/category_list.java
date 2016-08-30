@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.project.finalandproject.R;
+import com.project.finalandproject.conn.GatheringConn;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.GatheringDTO;
 import com.project.finalandproject.dto.MemberDTO;
@@ -43,6 +44,7 @@ public class category_list extends Activity{
         if(type.equals("mjoin")) {
             dto = (MemberDTO) intent.getSerializableExtra("dto");
         }else{
+
             dto2=(GatheringDTO)intent.getSerializableExtra("dto");
         }
 
@@ -78,6 +80,13 @@ public class category_list extends Activity{
 
                     }else {
                         //그룹만들기 DB연동.
+                        Log.i("insert","현재 insert 추가 하는 곳으로 이동 중");
+                        JSONObject result = (JSONObject)GatheringConn.getJSONDatas("add", dto2);
+                        if(result.get("msg").equals("Success")){
+                            Log.i("insert","추가 완료");
+                        }else{
+                            Log.i("insert","추가 실패");
+                        }
                         startActivity(intent);
                         finish();
 

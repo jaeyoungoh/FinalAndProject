@@ -1,17 +1,14 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.gathering;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -98,7 +95,7 @@ public class gathering_insert extends Activity{
                     }else {
                         dto.setGathering_hashtag(((EditText) findViewById(R.id.GATHERING_HASHTAG)).getText().toString());
                     }
-                        dto.setGathering_max_cnt(Integer.parseInt(((EditText) findViewById(R.id.GATHERING_MAX_CNT)).getText().toString()));
+                        dto.setGathering_max_cnt((((EditText) findViewById(R.id.GATHERING_MAX_CNT)).getText().toString()));
                     Intent intent = new Intent(getApplication(), category_list.class);
                     intent.putExtra("dto", dto);
                     intent.putExtra("type", "gjoin");

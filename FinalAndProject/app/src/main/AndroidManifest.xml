@@ -16,10 +16,6 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".test.Image_upload">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:theme="@style/Base.Theme.AppCompat.Dialog"
@@ -30,6 +26,10 @@
         <activity android:name=".gathering.Gathering_Search_Page">
         </activity>
         <activity android:name=".test.Test_Menu_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".meetting.meetting_insert">
         </activity>
@@ -45,7 +45,7 @@
         <activity android:name=".test.TestCalender"></activity>
         <activity android:name=".Main_Page2">
         </activity>
-        <activity android:name=".test.gathering_insert"
+        <activity android:name=".gathering.gathering_insert"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity android:name=".test.Test_Menu_Activity2"

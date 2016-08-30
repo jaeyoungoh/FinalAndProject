@@ -3,6 +3,8 @@ package com.project.finalandproject.conn;
 import android.os.StrictMode;
 import android.util.Log;
 
+import com.project.finalandproject.dto.GatheringDTO;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -35,6 +37,13 @@ public class GatheringConn {
             requestURL.append("listGathering.do"); // 리스트 출력
         } else if(type.equals("add")){
             requestURL.append("addGathering.do");
+            paramList.add(new BasicNameValuePair("gathering_title", ((GatheringDTO) obj).getGathering_title()));
+            paramList.add(new BasicNameValuePair("gathering_content", ((GatheringDTO) obj).getGathering_content()));
+            paramList.add(new BasicNameValuePair("gathering_category", ((GatheringDTO) obj).getGathering_category()));
+            paramList.add(new BasicNameValuePair("gathering_location", ((GatheringDTO) obj).getGathering_location()));
+            paramList.add(new BasicNameValuePair("gathering_max_cnt", ((GatheringDTO) obj).getGathering_max_cnt()));
+            paramList.add(new BasicNameValuePair("gathering_hashtag", ((GatheringDTO) obj).getGathering_hashtag()));
+            paramList.add(new BasicNameValuePair("gathering_max_sex", ((GatheringDTO) obj).getGathering_max_sex()));
 //            paramList.add(new BasicNameValuePair("interest", ((MemberDTO) obj).getEmail()));
 
         } else if(type.equals("makeProfile")){
