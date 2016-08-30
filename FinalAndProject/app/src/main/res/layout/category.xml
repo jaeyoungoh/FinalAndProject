@@ -18,94 +18,98 @@
 
 
 
-            <Button
-                        android:layout_width="wrap_content"
+                    <Button  android:backgroundTint="@color/color_tint3"
+                        android:layout_columnWeight="1"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/category_movie"
+                        android:drawableTop="@drawable/category_movie"
                         android:text="극장/영화"
                         />
 
 
-                <Button                     
-            android:layout_width="wrap_content"
+
+
+                <Button  android:backgroundTint="@color/color_tint3"
+                    android:layout_columnWeight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="자동차/오토바이"
-            android:background="@drawable/category_car_motercycle"
+            android:drawableTop="@drawable/category_car_motercycle"
                   />
 
 
-    <Button
-
-        android:layout_width="wrap_content"
+    <Button  android:backgroundTint="@color/color_tint3"
+        android:layout_columnWeight="1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="요리/음식"
-        android:background="@drawable/category_cooking"
+        android:drawableTop="@drawable/category_cooking"
 
         />
 
 
 
 
-            <Button
-
-                android:layout_width="wrap_content"
+            <Button  android:backgroundTint="@color/color_tint3"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="게임"
-                android:background="@drawable/category_game"
+                android:drawableTop="@drawable/category_game"
 
                 />
 
 
 
-            <Button
-
-                android:layout_width="wrap_content"
+            <Button  android:backgroundTint="@color/color_tint3"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="음악/악기"
-                android:background="@drawable/category_music"
+                android:drawableTop="@drawable/category_music"
 
                 />
 
 
 
-            <Button
-
-                android:layout_width="wrap_content"
+            <Button  android:backgroundTint="@color/color_tint3"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/category_kidulte"
+                android:drawableTop="@drawable/category_kidulte"
                 android:text="키덜트/장난감"
                 />
 
 
 
 
-            <Button
-
-                android:layout_width="wrap_content"
+            <Button  android:backgroundTint="@color/color_tint3"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="여행"
-                android:background="@drawable/category_travel"
+                android:drawableTop="@drawable/category_travel"
 
                 />
 
 
 
-            <Button
-
-                android:layout_width="wrap_content"
+            <Button  android:backgroundTint="@color/color_tint3"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="육아"
-                android:background="@drawable/category_childcare"
+                android:drawableTop="@drawable/category_childcare"
                 />
 
 
 
-            <Button
-
-                android:layout_width="wrap_content"
+            <Button  android:backgroundTint="@color/color_tint3"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="운동/건강"
-                android:background="@drawable/category_exercise"
+                android:drawableTop="@drawable/category_exercise"
 
                 />
 
