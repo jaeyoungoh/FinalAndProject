@@ -15,88 +15,71 @@
             android:columnCount="2"
             android:padding="20px"
             android:id="@+id/category">
-
-
-
-                    <Button  android:backgroundTint="@color/color_tint3"
+            
+                    <Button  
                         android:layout_columnWeight="1"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableTop="@drawable/category_movie"
                         android:text="극장/영화"
                         />
 
-
-
-
-                <Button  android:backgroundTint="@color/color_tint3"
+                <Button  
                     android:layout_columnWeight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자동차/오토바이"
             android:drawableTop="@drawable/category_car_motercycle"
                   />
 
 
-    <Button  android:backgroundTint="@color/color_tint3"
+    <Button  
         android:layout_columnWeight="1"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="요리/음식"
         android:drawableTop="@drawable/category_cooking"
 
         />
 
-
-
-
-            <Button  android:backgroundTint="@color/color_tint3"
+            <Button  
                 android:layout_columnWeight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="게임"
                 android:drawableTop="@drawable/category_game"
 
                 />
 
-
-
-            <Button  android:backgroundTint="@color/color_tint3"
+           <Button  
                 android:layout_columnWeight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="음악/악기"
                 android:drawableTop="@drawable/category_music"
 
                 />
 
-
-
-            <Button  android:backgroundTint="@color/color_tint3"
+            <Button  
                 android:layout_columnWeight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/category_kidulte"
                 android:text="키덜트/장난감"
                 />
 
-
-
-
-            <Button  android:backgroundTint="@color/color_tint3"
+            <Button  
                 android:layout_columnWeight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="여행"
                 android:drawableTop="@drawable/category_travel"
 
                 />
 
-
-
-            <Button  android:backgroundTint="@color/color_tint3"
+            <Button 
                 android:layout_columnWeight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="육아"
                 android:drawableTop="@drawable/category_childcare"
@@ -104,9 +87,9 @@
 
 
 
-            <Button  android:backgroundTint="@color/color_tint3"
+            <Button  
                 android:layout_columnWeight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="운동/건강"
                 android:drawableTop="@drawable/category_exercise"
