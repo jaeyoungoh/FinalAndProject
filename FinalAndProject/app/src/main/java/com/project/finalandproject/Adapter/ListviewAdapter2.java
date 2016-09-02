@@ -1,4 +1,4 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,11 +15,11 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016-08-03.
  */
-public class ListviewAdapter3 extends BaseAdapter {
+public class ListviewAdapter2 extends BaseAdapter {
     private LayoutInflater inflater;
-    private ArrayList<Listviewitem3> data;
+    private ArrayList<String> data;
     private int layout;
-    public ListviewAdapter3(Context context, int layout, ArrayList<Listviewitem3> data){
+    public ListviewAdapter2(Context context, int layout, ArrayList<String> data){
         this.inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data=data;
         this.layout=layout;
@@ -30,7 +30,7 @@ public class ListviewAdapter3 extends BaseAdapter {
         return data.size();
     }
     @Override
-    public Listviewitem3 getItem(int position){return data.get(position);}
+    public String getItem(int position){return data.get(position);}
     @Override
     public long getItemId(int position){return position;}
     @Override
@@ -38,15 +38,8 @@ public class ListviewAdapter3 extends BaseAdapter {
         if(convertView==null){
             convertView=inflater.inflate(layout,parent,false);
         }
-        Listviewitem3 listviewitem=data.get(position);
-        ImageView icon=(ImageView)convertView.findViewById(R.id.imageview1);
-        icon.setImageResource(listviewitem.getIcon());
-        TextView name=(TextView)convertView.findViewById(R.id.textview1);
-        name.setText(listviewitem.getName());
-        TextView num=(TextView)convertView.findViewById(R.id.GATHERING_NUM);
-        num.setText(listviewitem.getNum());
-        TextView information=(TextView)convertView.findViewById(R.id.GATHERING_INFORMATION);
-        information.setText(listviewitem.getInformation());
+        TextView name=(TextView)convertView.findViewById(R.id.textview);
+        name.setText(data.get(position));
         return convertView;
     }
     public void setColor(){

@@ -3,7 +3,7 @@
  * 	Free for modification and distribution
  */
 
-package com.project.finalandproject.test;
+package com.project.finalandproject.menu;
 
 import android.view.Gravity;
 import android.view.animation.AccelerateDecelerateInterpolator;

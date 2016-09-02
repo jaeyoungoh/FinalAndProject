@@ -1,4 +1,4 @@
-package com.project.finalandproject;
+package com.project.finalandproject.login;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,11 +14,12 @@ import android.widget.Toast;
 import com.nhn.android.naverlogin.OAuthLogin;
 import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
+import com.project.finalandproject.R;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
 import com.project.finalandproject.member.category_list;
-import com.project.finalandproject.test.Test_Menu_Activity;
+import com.project.finalandproject.menu.Test_Menu_Activity;
 
 import org.json.simple.JSONObject;
 import org.w3c.dom.Document;

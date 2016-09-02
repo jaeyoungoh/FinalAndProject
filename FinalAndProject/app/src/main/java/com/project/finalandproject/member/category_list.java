@@ -18,7 +18,7 @@ import com.project.finalandproject.conn.GatheringConn;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.GatheringDTO;
 import com.project.finalandproject.dto.MemberDTO;
-import com.project.finalandproject.test.Test_Menu_Activity;
+import com.project.finalandproject.menu.Test_Menu_Activity;
 
 import org.json.simple.JSONObject;
 

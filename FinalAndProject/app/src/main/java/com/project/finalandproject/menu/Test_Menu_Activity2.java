@@ -1,4 +1,4 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.menu;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 
 import com.project.finalandproject.R;
 import com.project.finalandproject.chat.gathering_chatting;
+import com.project.finalandproject.gathering.gathering_view2;
+import com.project.finalandproject.Adapter.Listviewitem;
 
 import java.util.ArrayList;
 

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.project.finalandproject.Main_Page2;
+import com.project.finalandproject.login.Main_Page2;
 import com.project.finalandproject.R;
 
 /**

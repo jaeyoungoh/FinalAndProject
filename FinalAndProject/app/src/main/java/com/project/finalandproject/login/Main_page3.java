@@ -1,4 +1,4 @@
-package com.project.finalandproject;
+package com.project.finalandproject.login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.project.finalandproject.R;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;
 import com.project.finalandproject.member.MemInfo;
 import com.project.finalandproject.member.Mem_Join_Page;
-import com.project.finalandproject.test.Test_Menu_Activity;
+import com.project.finalandproject.menu.Test_Menu_Activity;
 
 import org.json.simple.JSONObject;
 

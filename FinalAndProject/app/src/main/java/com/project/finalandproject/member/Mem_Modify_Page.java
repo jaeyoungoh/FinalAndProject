@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.project.finalandproject.Main_Page2;
+import com.project.finalandproject.login.Main_Page2;
 import com.project.finalandproject.R;
 import com.project.finalandproject.conn.MemConn;
 import com.project.finalandproject.dto.MemberDTO;

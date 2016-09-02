@@ -1,8 +1,7 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.gathering;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,8 @@ import android.widget.ListView;
 
 import com.project.finalandproject.R;
 import com.project.finalandproject.conn.GatheringConn;
+import com.project.finalandproject.Adapter.ListviewAdapter3;
+import com.project.finalandproject.Adapter.Listviewitem3;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -22,12 +23,12 @@ import java.util.ArrayList;
 /**
  * Created by 김희윤 on 2016-08-10.
  */
-public class gathering_list extends LinearLayout {
+public class gathering_list_test2 extends LinearLayout {
 
     //gathering_list
 
     Context context;
-    public gathering_list(Context context){
+    public gathering_list_test2(Context context){
         super(context);
         excute(context);
     }
@@ -37,7 +38,6 @@ public class gathering_list extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.gathering_list_view, this, true);
         itemInsert();
-        Log.i("msg","리스트뽑기");
     }
 
     private void itemInsert(){
@@ -45,8 +45,8 @@ public class gathering_list extends LinearLayout {
         Listviewitem3 test;
         ArrayList<Listviewitem3> data;
         ListView listView;
-        listView=(ListView)findViewById(R.id.listview1);
-        final ImageButton gathering_insert=(ImageButton)findViewById(R.id.btn_gathering_insert);
+        listView=(ListView)findViewById(R.id.listview);
+        final ImageButton gathering_insert=(ImageButton)findViewById(R.id.gathering_insert);
         gathering_insert.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,11 +58,10 @@ public class gathering_list extends LinearLayout {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(context, Test_Menu_Activity2.class);
-                Log.i("num",((Listviewitem3)adapterView.getAdapter().getItem(i)).getNum());
-                intent.putExtra("num",(String)((Listviewitem3)adapterView.getAdapter().getItem(i)).getNum());
+                Intent intent = new Intent(context, gathering_view.class);
+                intent.putExtra("num",(String)adapterView.getAdapter().getItem(2));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+               context.startActivity(intent);
                 //선택한 아이템의 num 전송.
 
 
@@ -79,10 +78,7 @@ public class gathering_list extends LinearLayout {
             data.add(test);
         }
         this.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        Log.i("msg","여기까지옴1");
-        ListviewAdapter3 adapter =new ListviewAdapter3(context,R.layout.item,data);
-        Log.i("msg","여기까지옴2");
+        ListviewAdapter3 adapter =new ListviewAdapter3(getContext(),R.layout.item,data);
         listView.setAdapter(adapter);
-        Log.i("msg","여기까지옴3");
     }
 }

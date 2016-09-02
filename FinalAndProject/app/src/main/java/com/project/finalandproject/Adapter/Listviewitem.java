@@ -1,4 +1,4 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.Adapter;
 
 /**
  * Created by Administrator on 2016-08-03.

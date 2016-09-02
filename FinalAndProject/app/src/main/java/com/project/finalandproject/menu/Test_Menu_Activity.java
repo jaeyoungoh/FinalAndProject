@@ -1,10 +1,9 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.menu;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -25,7 +24,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.project.finalandproject.R;
+import com.project.finalandproject.gathering.gathering_list;
 import com.project.finalandproject.member.MemInfo;
+import com.project.finalandproject.Adapter.ListviewAdapter;
+import com.project.finalandproject.Adapter.ListviewAdapter2;
+import com.project.finalandproject.Adapter.Listviewitem;
+import com.project.finalandproject.test.test_in;
 
 import java.util.ArrayList;
 

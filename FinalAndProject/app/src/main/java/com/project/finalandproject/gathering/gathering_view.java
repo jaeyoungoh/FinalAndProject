@@ -1,4 +1,4 @@
-package com.project.finalandproject.test;
+package com.project.finalandproject.gathering;
 
 import android.app.Activity;
 import android.app.AlertDialog;
