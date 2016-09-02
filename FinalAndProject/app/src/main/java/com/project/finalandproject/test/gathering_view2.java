@@ -3,7 +3,6 @@ package com.project.finalandproject.test;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -43,6 +42,10 @@ public class gathering_view2 extends LinearLayout {
         String num = intent.getStringExtra("num"); //Intent로 num을 받아옴.
 
 
+        for(int i=0; i<jArr.size(); i++){
+            obj = (JSONObject)jArr.get(i);
+            if(num.equals(obj.get("Gathering_num").toString())) break;
+        }
 
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -54,11 +57,14 @@ public class gathering_view2 extends LinearLayout {
         GATHERING_MAX_CNT = (TextView) findViewById(R.id.GATHERING_MAX_CNT);
         GATHERING_LOCATION = (TextView) findViewById(R.id.GATHERING_LOCATION);
 
-        obj = (JSONObject) jArr.get(Integer.parseInt(num)-1);  //num으로 자료 검색.
-        Log.i("title",obj.get("Gathering_title").toString());
         GATHERING_TITLE.setText(""+obj.get("Gathering_title").toString());
         GATHERING_CONTENT.setText(""+obj.get("Gathering_content").toString());
-        GATHERING_HASHTAG.setText(""+obj.get("Gathering_hashtag").toString());
+        try {
+            GATHERING_HASHTAG.setText("" + obj.get("Gathering_hashtag").toString());
+        } catch(Exception e){
+            GATHERING_HASHTAG.setText("없음.");
+        }
+
         GATHERING_MAX_CNT.setText(""+obj.get("Gathering_max_cnt").toString());
         GATHERING_LOCATION.setText(""+obj.get("Gathering_location").toString());
     }
